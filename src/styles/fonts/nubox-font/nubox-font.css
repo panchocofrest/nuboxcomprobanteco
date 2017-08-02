@@ -1,0 +1,306 @@
+@font-face {
+  font-family: 'Nubox';
+  src:  url('Nubox.woff2') format('woff2'),
+	url('Nubox.woff') format('woff'),
+    url('Nubox.svg?#Nubox') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nuboxFont {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Nubox' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nubox-logo:before {
+  content: "\e900";
+}
+.nubox-ruta:before {
+  content: "\e901";
+}
+.nubox-menu:before {
+  content: "\e903";
+}
+.nubox-cerrar:before {
+  content: "\e904";
+}
+.nubox-notificaciones:before {
+  content: "\e905";
+}
+.nubox-notificaciones-error:before {
+  content: "\e939";
+}
+.nubox-accesos-directos:before {
+  content: "\e906";
+}
+.nubox-asistente:before {
+  content: "\e908";
+}
+.nubox-chat:before {
+  content: "\e909";
+}
+.nubox-historial:before {
+  content: "\e907";
+}
+.nubox-info:before {
+  content: "\e90e";
+}
+.nubox-dropdown:before {
+  content: "\e90a";
+}
+.nubox-colapsar:before {
+  content: "\e948";
+}
+.nubox-breadcrumb:before {
+  content: "\e90b";
+}
+.nubox-breadcrumb-izq:before {
+  content: "\e94c";
+}
+.nubox-sorting:before {
+  content: "\e945";
+}
+.nubox-mas:before {
+  content: "\e90c";
+}
+.nubox-menos:before {
+  content: "\e90d";
+}
+.nubox-movimientos:before {
+  content: "\e915";
+}
+.nubox-reportes:before {
+  content: "\e90f";
+}
+.nubox-libros:before {
+  content: "\e93e";
+}
+.nubox-administracion:before {
+  content: "\e910";
+}
+.nubox-configuracion:before {
+  content: "\e911";
+}
+.nubox-calendario:before {
+  content: "\e912";
+}
+.nubox-actualizacion:before {
+  content: "\e913";
+}
+.nubox-mensaje:before {
+  content: "\e914";
+}
+.nubox-exportar:before {
+  content: "\e916";
+}
+.nubox-pdf:before {
+  content: "\e929";
+}
+.nubox-importar:before {
+  content: "\e917";
+}
+.nubox-agregar:before {
+  content: "\e918";
+}
+.nubox-imprimir:before {
+  content: "\e919";
+}
+.nubox-descargar:before {
+  content: "\e91a";
+}
+.nubox-editar:before {
+  content: "\e91b";
+}
+.nubox-buscar:before {
+  content: "\e91c";
+}
+.nubox-borrar:before {
+  content: "\e92a";
+}
+.nubox-recuperar:before {
+  content: "\e92e";
+}
+.nubox-sin-alertas:before {
+  content: "\e91d";
+}
+.nubox-cambiar-clave:before {
+  content: "\e91e";
+}
+.nubox-cambiar-servicio:before {
+  content: "\e91f";
+}
+.nubox-cerrar-sesion:before {
+  content: "\e920";
+}
+.nubox-cambiar-usuario .path1:before {
+  content: "\e92b";
+  color: rgb(0, 0, 0);
+  opacity: 0.75;
+}
+.nubox-cambiar-usuario .path2:before {
+  content: "\e934";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.nubox-cambiar-usuario .path3:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.nubox-error:before {
+  content: "\e921";
+}
+.nubox-invalido:before {
+  content: "\e922";
+}
+.nubox-visible:before {
+  content: "\e923";
+}
+.nubox-invisible:before {
+  content: "\e924";
+}
+.nubox-checkbox-on:before {
+  content: "\e925";
+}
+.nubox-checkbox-indeterminado:before {
+  content: "\e93a";
+}
+.nubox-checkbox-off:before {
+  content: "\e926";
+}
+.nubox-radio-on:before {
+  content: "\e927";
+}
+.nubox-radio-off:before {
+  content: "\e928";
+}
+.nubox-menu-loading:before {
+  content: "\e92f";
+}
+.nubox-notificaciones-activas:after {
+  content: "\e931";
+}
+.nubox-inicio:before {
+  content: "\e930";
+}
+.nubox-check:before {
+  content: "\e933";
+}
+.nubox-eliminar-todo:before {
+  content: "\e932";
+}
+.nubox-eliminar-papelera:before {
+  content: "\e92d";
+}
+.nubox-descartar-papelera:before {
+  content: "\e92c";
+}
+.nubox-atras:before {
+  content: "\e936";
+}
+.nubox-conectado:before {
+  content: "\e937";
+}
+.nubox-desconectado:before {
+  content: "\e938";
+}
+.nubox-intercambiar:before {
+  content: "\e93b";
+}
+.nubox-link-externo:before {
+  content: "\e93c";
+}
+.nubox-advertencia:before {
+  content: "\e93d";
+}
+.nubox-venta:before {
+  content: "\e93f";
+}
+.nubox-compra:before {
+  content: "\e940";
+}
+.nubox-recaudacion:before {
+  content: "\e941";
+}
+.nubox-pago:before {
+  content: "\e942";
+}
+.nubox-limpiar:before {
+  content: "\e902";
+}
+.nubox-usuario:before {
+  content: "\e943";
+}
+.nubox-terceros:before {
+  content: "\e950";
+}
+.nubox-guardando:before {
+  content: "\e944";
+}
+.nubox-nube:before {
+  content: "\e946";
+}
+.nubox-nube-ondas:before {
+  content: "\e947";
+}
+.nubox-vincular:before {
+  content: "\e949";
+}
+.nubox-desvincular:before {
+  content: "\e94a";
+}
+.nubox-banco:before {
+  content: "\e94b";
+}
+.nubox-traspasar:before {
+  content: "\e94d";
+}
+.nubox-descargar-ultimo:before {
+  content: "\e953";
+}
+.nubox-bloquear:before {
+  content: "\e94e";
+}
+.nubox-desbloquear:before {
+  content: "\e94f";
+}
+.nubox-sorting-asc:before {
+  content: "\e951";
+}
+.nubox-sorting-desc:before {
+  content: "\e952";
+}
+.nubox-procesos:before {
+  content: "\e954";
+}
+.nubox-comprobante:before {
+  content: "\e955";
+}
+.nubox-internet-explorer:before {
+  content: "\e956";
+}
+.nubox-chrome:before {
+  content: "\e957";
+}
+.nubox-opera:before {
+  content: "\e958";
+}
+.nubox-edge:before {
+  content: "\e959";
+}
+.nubox-safari:before {
+  content: "\e95a";
+}
+.nubox-firefox:before {
+  content: "\e95b";
+}

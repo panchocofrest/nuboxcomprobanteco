@@ -6,11 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!--NORMALIZE-->
+  <!--FUENTES-->
+  <link href="styles/fonts/roboto/roboto.css" rel="stylesheet">
+  <link href="styles/fonts/nubox-font/nubox-font.css" rel="stylesheet">
+  <!--NUBOX THEME (MODAL)-->
+  <link href="styles/jqx.base.css" rel="stylesheet">
+  <link href="styles/jqx-nubox.css" rel="stylesheet">
+  <!--CUSTOM STYLES-->
+  <link href="styles/nbx-general.css" rel="stylesheet">
+  <link href="styles/comprobante-co.css" rel="stylesheet">
+
+  <!--JQUERY-->
+  <script src="scripts/jquery-3.2.1.min.js"></script>
+  <!--MODERNIZR-->
+  <script src="scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-  <div id="app">APPLICATION CONTENT</div>
+  <div class="windowInnerContent" style="position: relative;">
+    <div id="app" class="modal-body"></div>
+  </div>
 
   <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
   <script type="text/javascript" src="/assets/app.js"></script>
 </body>
 </html>
+
+<!--CUSTOM SCRIPTS-->
+<script src="scripts/comprobante-co.js"></script>

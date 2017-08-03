@@ -93,7 +93,7 @@
    ],
    "items":[
        {
-           "id":101,
+           "Id":101,
             "Num":1,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
@@ -132,6 +132,7 @@
                 ],
                 "items":[
                     {
+                        "Id":1024,
                         "Cliente":"76.106.001-5 ABA Y ROJAS LTDA DE CAMIONES",
                         "Documento":"Factura Electrónica",
                         "Numero":352,
@@ -143,7 +144,7 @@
             }
         },
         {
-            "id":102,
+            "Id":102,
             "Num":2,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
@@ -159,7 +160,7 @@
             }
         },
         {
-            "id":103,
+            "Id":103,
             "Num":3,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
@@ -175,7 +176,7 @@
             }
         },
         {
-            "id":104,
+            "Id":104,
             "Num":4,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
@@ -191,7 +192,7 @@
             }
         },
         {
-            "id":105,
+            "Id":105,
             "Num":5,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",

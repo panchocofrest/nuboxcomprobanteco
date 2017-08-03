@@ -17,12 +17,11 @@ class Movimiento extends React.Component {
                 <ul className="nivel-ul">
                     {
                         this.props.columns.map((column, i) =>
-
-                            <Celda
-                                key={i}
-                                llave={column.key}
-                                style={column.class}
-                                value={that.props.movimiento[column.key]} />
+                        <Celda
+                            key={i}
+                            llave={column.key}
+                            style={column.class}
+                            value={that.props.movimiento[column.key]} />
                         )
                     }
                 </ul>

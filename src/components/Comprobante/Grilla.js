@@ -18,7 +18,7 @@ class Grilla extends React.Component {
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     let api = this.props.url
     fetch(api)
       .then((response) => {

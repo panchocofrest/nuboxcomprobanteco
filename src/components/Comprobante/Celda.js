@@ -1,6 +1,7 @@
 require('normalize.css/normalize.css');
 
 import React from 'react';
+import $ from 'jquery';
 
 class Celda extends React.Component {
 
@@ -9,8 +10,32 @@ class Celda extends React.Component {
         super(props)
     }
 
-    expanded() {
-        alert('expanded');
+    expanded(event) {
+        debugger;
+        var Label = $(event.currentTarget);
+        var IDregistro = Label.parent().parent()[0].id;
+
+        $('#' + IDregistro).find('.level-2').each(function(index, value) {
+
+            if($(value).css('height')=='0px')
+            {
+                $(value).css({ 'height':'auto' });
+                $('#' + IDregistro).addClass('activo');
+                var LabelDiv = $(value).parent().find('.label')[0];
+                $(LabelDiv).removeClass('collapsed');
+                $(LabelDiv).addClass('expanded');
+            }
+            else
+            {
+                $(value).css({ 'height':'' });
+
+                $('#' + IDregistro).removeClass('activo');
+                var LabelDiv = $(value).parent().find('.label')[0];
+                $(LabelDiv).removeClass('expanded');
+                $(LabelDiv).addClass('collapsed');
+            }
+
+        });
     }
 
     renderCelda() {

@@ -13,20 +13,17 @@ class Fila extends React.Component {
     render() {
         var that = this;
         return(
-            <div className={this.props.style} id={this.props.identificador}>
-                <ul className="nivel-ul">
-                    {
-                        this.props.columns.map((column, i) =>
-
-                            <Celda
-                                key={i}
-                                llave={column.key}
-                                style={'nivel-li ' + column.class}
-                                value={that.props.item[column.key]} />
-                        )
-                    }
-                </ul>
-            </div>
+            <ul className="nivel-ul">
+                {
+                    this.props.columns.map((column, i) =>
+                    <Celda
+                        key={i}
+                        llave={column.key}
+                        style={'nivel-li ' + column.class}
+                        value={that.props.item[column.key]} />
+                    )
+                }
+            </ul>
         );
     }
 }

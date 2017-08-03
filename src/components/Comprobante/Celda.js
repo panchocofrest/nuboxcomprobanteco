@@ -21,16 +21,10 @@ class Celda extends React.Component {
 
     componentDidMount () 
     {
-        
-
-        if(!this.state.flagImput)
-        {
-            console.log(this.state.flagImput)
-
-            this.refs.algo.val('New Value');
-        }
-
-
+       console.log(this.props)
+         this.setState(() => {
+               return {valorImput: this.props.value};
+        });   
     }
 
     inputChange()

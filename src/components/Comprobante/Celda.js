@@ -11,8 +11,12 @@ class Celda extends React.Component {
     }
 
     expanded(event) {
-        debugger;
+        debugger
         var Label = $(event.currentTarget);
+
+        if (Label.hasClass("label-noexpand"))
+            return false
+
         var IDregistro = Label.parent().parent()[0].id;
 
         $('#' + IDregistro).find('.level-2').each(function(index, value) {
@@ -47,7 +51,7 @@ class Celda extends React.Component {
 
         if(this.props.llave === 'Tipo') {
             return(
-                <li className={this.props.style + ' ' + this.props.value} onClick={this.expanded}></li>
+                <li className={this.props.value.LabelClass + ' ' + this.props.value.Label} onClick={this.expanded}></li>
             )
         }
 

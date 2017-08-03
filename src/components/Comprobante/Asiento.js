@@ -13,27 +13,44 @@ class Asiento extends React.Component {
 
     render() {
         var that = this;
-        return(
-            <div className={this.props.style} id={this.props.identificador}>
-                <Fila
-                    item={this.props.item}
-                    columns={this.props.columns} />
-                
-                {
-                    this.props.movimientos.items.map((movimiento, i) =>
+        if (this.props.movimientos != null) {
+            return(
+                <div className={this.props.style} id={this.props.identificador}>
+                    <Fila
+                        item={this.props.item}
+                        columns={this.props.columns} />
+                    
+                    {
+                        this.props.movimientos.items.map((movimiento, i) =>
+                        <Movimiento
+                            key={i+1}
+                            movimiento={movimiento}
+                            columns={this.props.movimientos.columns}
+                            style="registro level-2 level-sin-num"
+                            identificador={that.props.identificador + movimiento.Id} />
+                        )
+                    }
+                    
                     <Movimiento
-                        key={i}
-                        movimiento={movimiento}
+                        key={0}
+                        movimiento={this.props.movimientos.default}
                         columns={this.props.movimientos.columns}
-                        style="registro level-2 level-sin-num"
-                        identificador={that.props.identificador + movimiento.Id}
-                    />
-                    )
-                }
+                        style="registro level-2 level-sin-num placeholder"
+                        identificador={that.props.identificador + String(Math.random()).split('.')[1]} />
 
 
-            </div>
-        );
+                </div>
+            )
+        }
+        else {
+            return(
+                <div className={this.props.style} id={this.props.identificador}>
+                    <Fila
+                        item={this.props.item}
+                        columns={this.props.columns} />
+                </div>
+            )
+        }
     }
 }
 

@@ -27,9 +27,6 @@ class Grilla extends React.Component {
       .then((data) => {
         this.setState({ data: data })
       })
-/*      .catch((error) => {
-        console.log(error)
-      })*/
   }
 
   render() {

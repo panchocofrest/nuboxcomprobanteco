@@ -3,28 +3,38 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import JqxInput from '../../public/js/jqwidgets-react/react_jqxinput.js';
+import JqxCalendar from '../../public/js/jqwidgets-react/react_jqxcalendar.js';
 
 class Celda extends React.Component {
 
     constructor(props)
     {
         super(props)
-        this.state = {flagImput: true, valorImput : ""}
+        this.state = {flagImput: true, flagCalendar: true, valorImput : "", valorCalendar: ""}
         this.expanded.bind(this)
         this.cargaImput = this.cargaImput.bind(this)
+        this.cargaCalendar = this.cargaCalendar.bind(this)
         this.renderCelda = this.renderCelda.bind(this)
         this.componentDidMount = this.componentDidMount.bind(this)
         this.inputChange = this.inputChange.bind(this)
         this.changeImputVal = this.changeImputVal.bind(this)
+        this.changeCalendarVal = this.changeCalendarVal.bind(this)
     }
 
 
     componentDidMount () 
     {
-       console.log(this.props)
-         this.setState(() => {
-               return {valorImput: this.props.value};
-        });   
+       //console.log(this.props)
+     if(this.props.llave === 'Glosa') {
+            this.setState(() => {
+                return {valorImput: this.props.value};
+            });   
+         }
+      if(this.props.llave === 'Fecha') {
+            this.setState(() => {
+                return {valorCalendar: this.props.value};
+            });   
+         }
     }
 
     inputChange()
@@ -33,7 +43,7 @@ class Celda extends React.Component {
     }
 
     expanded(event) {
-        debugger
+       
         var Label = $(event.currentTarget);
 
         if (Label.hasClass("label-noexpand"))
@@ -70,23 +80,50 @@ class Celda extends React.Component {
                return {valorImput: valor,flagImput: true};
         });    
     }
+
+     changeCalendarVal(valor){
+
+          this.setState(() => {
+               return {valorCalendar: valor,flagCalendar: true};
+        });    
+    }
     
     cargaImput(){
   
      this.setState(() => {
-         console.log('cambia de estado')
+        
 
           if(!this.state.flagImput)
         {
-            console.log(this.state.flagImput)
+           
 
-            this.refs.algo.on('change', (event) =>
+            this.refs.imputJqxWidget.on('change', (event) =>
             {
                 console.log(event.target.value)
                 this.changeImputVal(event.target.value)
             });
         }
         return {flagImput: false};
+        });
+
+    }
+
+      cargaCalendar(){
+  
+     this.setState(() => {
+         console.log(this.state.flagCalendar)
+
+          if(!this.state.flagCalendar)
+        {
+            console.log(this.state.flagCalendar)
+
+            this.refs.calendarJqxWidget.on('change', (event) =>
+            {
+                console.log(event.target.value)
+                this.changeCalendarVal(event.target.value)
+            });
+        }
+        return {flagCalendar: false};
         });
 
     }
@@ -113,11 +150,27 @@ class Celda extends React.Component {
                 }else{
                   return(
                         <li className={this.props.style} tabIndex='' onClick={this.cargaImput.bind(this)}>
-                            <JqxInput ref="algo" width={150} height={50} value="" onClick={this.inputChange.bind(this)}   />
+                            <JqxInput ref="imputJqxWidget" width={150} height={50} value="" onClick={this.inputChange.bind(this)}   />
                         </li>
                         )
                 }
         }
+
+          if(this.props.llave === 'Fecha') {
+
+              if(this.state.flagCalendar) {
+                    return(
+                        <li className={this.props.style} tabIndex='' onClick={this.cargaCalendar.bind(this)}>{this.state.valorCalendar}</li>
+                        //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
+                        )
+                }else{
+                  return(
+                        <li className={this.props.style} tabIndex='' onClick={this.cargaCalendar.bind(this)}>
+                            <JqxCalendar ref='calendarJqxWidget' width={220} height={220} culture= 'de-DE'/>
+                        </li>
+                        )
+                }
+             }
 
         return(
             <li className={this.props.style} tabIndex=''>{this.props.value}</li>

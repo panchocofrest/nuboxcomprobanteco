@@ -23,8 +23,10 @@ class Cuerpo extends React.Component {
                                 <Asiento
                                     key={incremental}
                                     item={item}
-                                    columns={this.props.data.columns}
+                                    item_columns={this.props.source.columns}
                                     movimientos={item.Movimientos}
+                                    movimientos_columns={this.props.source.movimientos.auxiliar.columns}
+                                    movimientos_default={this.props.source.movimientos.auxiliar.default}
                                     style="registro level-1"
                                     identificador={'registro_' + incremental} />
                             );
@@ -33,9 +35,11 @@ class Cuerpo extends React.Component {
 
                     <Asiento
                         key={incremental+1}
-                        item={this.props.data.default}
-                        columns={this.props.data.columns}
+                        item={this.props.source.default}
+                        item_columns={this.props.source.columns}
                         movimientos={null}
+                        movimientos_columns={null}
+                        movimientos_default={null}
                         style="registro level-1 placeholder"
                         identificador={'registro_' + (incremental+1)} />
 

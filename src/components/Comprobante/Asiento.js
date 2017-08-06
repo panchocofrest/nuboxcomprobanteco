@@ -18,14 +18,14 @@ class Asiento extends React.Component {
                 <div className={this.props.style} id={this.props.identificador}>
                     <Fila
                         item={this.props.item}
-                        columns={this.props.columns} />
+                        columns={this.props.item_columns} />
                     
                     {
                         this.props.movimientos.items.map((movimiento, i) =>
                         <Movimiento
                             key={i+1}
                             movimiento={movimiento}
-                            columns={this.props.movimientos.columns}
+                            columns={this.props.movimientos_columns}
                             style="registro level-2 level-sin-num"
                             identificador={that.props.identificador + movimiento.Id} />
                         )
@@ -33,8 +33,8 @@ class Asiento extends React.Component {
                     
                     <Movimiento
                         key={0}
-                        movimiento={this.props.movimientos.default}
-                        columns={this.props.movimientos.columns}
+                        movimiento={this.props.movimientos_default}
+                        columns={this.props.movimientos_columns}
                         style="registro level-2 level-sin-num placeholder"
                         identificador={that.props.identificador + String(Math.random()).split('.')[1]} />
 
@@ -47,7 +47,7 @@ class Asiento extends React.Component {
                 <div className={this.props.style} id={this.props.identificador}>
                     <Fila
                         item={this.props.item}
-                        columns={this.props.columns} />
+                        columns={this.props.item_columns} />
                 </div>
             )
         }

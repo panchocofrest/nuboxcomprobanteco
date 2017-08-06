@@ -1,6 +1,6 @@
 require('normalize.css/normalize.css');
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import JqxInput from '../../public/js/jqwidgets-react/react_jqxinput.js';
 
@@ -9,7 +9,7 @@ class Celda extends React.Component {
     constructor(props)
     {
         super(props)
-        this.state = {flagImput: true, valorImput : ""}
+        this.state = {flagImput: true, valorImput : ''}
         this.expanded.bind(this)
         this.cargaImput = this.cargaImput.bind(this)
         this.renderCelda = this.renderCelda.bind(this)
@@ -19,14 +19,13 @@ class Celda extends React.Component {
     }
 
 
-    componentDidMount () 
+    componentDidMount ()
     {
         
 
         if(!this.state.flagImput)
         {
-            console.log(this.state.flagImput)
-
+            //console.log(this.state.flagImput)
             this.refs.algo.val('New Value');
         }
 
@@ -35,14 +34,14 @@ class Celda extends React.Component {
 
     inputChange()
     {
-        console.log('paso')
+        //console.log('paso')
     }
 
     expanded(event) {
         debugger
         var Label = $(event.currentTarget);
 
-        if (Label.hasClass("label-noexpand"))
+        if (Label.hasClass('label-noexpand'))
             return false
 
         var IDregistro = Label.parent().parent()[0].id;
@@ -74,21 +73,19 @@ class Celda extends React.Component {
 
           this.setState(() => {
                return {valorImput: valor,flagImput: true};
-        });    
+        });
     }
     
     cargaImput(){
   
      this.setState(() => {
-         console.log('cambia de estado')
-
-          if(!this.state.flagImput)
+         //console.log('cambia de estado')
+        if(!this.state.flagImput)
         {
-            console.log(this.state.flagImput)
-
+            //console.log(this.state.flagImput)
             this.refs.algo.on('change', (event) =>
             {
-                console.log(event.target.value)
+                //console.log(event.target.value)
                 this.changeImputVal(event.target.value)
             });
         }

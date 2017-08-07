@@ -34,7 +34,6 @@ class Celda extends React.Component {
     }
 
     expanded(event) {
-        debugger
         var Label = $(event.currentTarget);
 
         if (Label.hasClass('label-noexpand'))

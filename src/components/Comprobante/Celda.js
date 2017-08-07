@@ -21,15 +21,11 @@ class Celda extends React.Component {
 
     componentDidMount ()
     {
-        
-
         if(!this.state.flagImput)
         {
             //console.log(this.state.flagImput)
             this.refs.algo.val('New Value');
         }
-
-
     }
 
     inputChange()
@@ -70,9 +66,8 @@ class Celda extends React.Component {
     }
 
     changeImputVal(valor){
-
-          this.setState(() => {
-               return {valorImput: valor,flagImput: true};
+        this.setState(() => {
+            return {valorImput: valor,flagImput: true};
         });
     }
     
@@ -102,8 +97,11 @@ class Celda extends React.Component {
         }
 
         if(this.props.llave === 'Tipo') {
+            debugger
+            let style = (this.props.value === 'ban' || this.props.value === 'aux') ? 'label collapsed' : 'label-noexpand'
+            let css = 'nivel-li ' + this.props.value + ' ' + style
             return(
-                <li className={this.props.value.LabelClass + ' ' + this.props.value.Label} onClick={this.expanded}></li>
+                <li className={css.trim()} onClick={this.expanded}></li>
             )
         }
 

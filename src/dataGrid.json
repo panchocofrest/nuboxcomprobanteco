@@ -5,10 +5,7 @@
             "Num":1,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"ban",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"aux",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
@@ -16,6 +13,17 @@
             "Haber":"$1.000.080",
             "Movimientos": {
                 "items":[
+                    {
+                        "Id":1024,
+                        "Remove":null,
+                        "Cliente":"76.106.001-5 ABA Y ROJAS LTDA DE CAMIONES",
+                        "Documento":"Factura Electrónica",
+                        "Numero":352,
+                        "Fecha":"13/06/2017",
+                        "Debe":"$15.000",
+                        "Haber":"$2.315.000",
+                        "Saldo":"$250"
+                    },
                     {
                         "Id":1024,
                         "Remove":null,
@@ -35,10 +43,7 @@
             "Num":2,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"ban",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"ban",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
@@ -53,10 +58,7 @@
             "Num":3,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"aux",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"aux",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
@@ -71,10 +73,7 @@
             "Num":4,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"aux",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"aux",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
@@ -89,10 +88,7 @@
             "Num":5,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"hon",
-                "LabelClass":"nivel-li label-noexpand"
-            },            
+            "Tipo":"hon",     
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",

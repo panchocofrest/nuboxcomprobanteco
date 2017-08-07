@@ -30,7 +30,6 @@ class Grilla extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div id="grid" className="modal-body">
         <div className="cnt-comprobante">

@@ -4,7 +4,6 @@ Copyright (c) 2011-2017 jQWidgets.
 License: http://jqwidgets.com/license/
 */
 import React from 'react';
-import $ from 'jquery';
 
 let jqxInput = React.createClass ({
   getInitialState: function () {

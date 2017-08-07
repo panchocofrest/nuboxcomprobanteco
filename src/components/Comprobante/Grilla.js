@@ -34,8 +34,12 @@ class Grilla extends React.Component {
       <div id="grid" className="modal-body">
         <div className="cnt-comprobante">
 
-          <Cabecera data={this.state.data}/>
-          <Cuerpo data={this.state.data}/>
+          <Cabecera
+            columns={this.props.source.columns} />
+
+          <Cuerpo
+            source={this.props.source}
+            data={this.state.data} />
 
         </div>
       </div>

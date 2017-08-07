@@ -1,178 +1,29 @@
 {
-   "columns": [
-      {
-         "key":"Num",
-         "class":"numeracion",
-         "type": "Number",
-         "header": {
-            "class": "numeracion",
-            "label": null,
-            "visible": true
-         }
-      },
-      {
-         "key":"Remove",
-         "class":"borrar",
-         "type": null,
-         "header": {
-            "class": null,
-            "label": null,
-            "visible": false
-         }
-      },
-      {
-         "key":"Cuenta",
-         "class":"no-border normal left width-100-num-label-del",
-         "type":"String",
-         "header": {
-            "class": "width-100-num-label-del",
-            "label": "Cuenta",
-            "visible": true
-         }
-      },
-      {
-         "key": "Tipo",
-         "class": "label collapsed",
-         "type": null,
-         "header": {
-            "class": null,
-            "label": null,
-            "visible": false
-         }
-      },
-      {
-         "key":"Glosa",
-         "class":"normal left width-15",
-         "type":"String",
-         "header": {
-            "class": "width-15",
-            "label": "Glosa",
-            "visible": true
-         }
-      },
-      {
-         "key":"CentroCostos",
-         "class":"normal left width-20",
-         "type":"String",
-         "header": {
-            "class": "width-20",
-            "label": "Centro de Costos",
-            "visible": true
-         }
-      },
-      {
-         "key":"Sucursal",
-         "class":"normal left width-10",
-         "type":"String",
-         "header": {
-            "class": "width-10",
-            "label": "Sucursal",
-            "visible": true
-         }
-      },
-      {
-         "key":"Debe",
-         "class":"normal right width-10",
-         "type":"String",
-         "header": {
-            "class": "width-10",
-            "label": "$ Debe",
-            "visible": true
-         }
-      },
-      {
-         "key":"Haber",
-         "class":"normal right width-10",
-         "type":"String",
-         "header": {
-            "class": "width-10",
-            "label": "$ Haber",
-            "visible": true
-         }
-      }
-   ],
-   "default": {
-       "Id":0,
-        "Num":0,
-        "Remove":null,
-        "Cuenta":"Cuenta",
-        "Tipo": {
-            "Label":"vacia",
-            "LabelClass":"nivel-li label collapsed"
-        },
-        "Glosa":"Glosa",
-        "CentroCostos":"Centro de costo",
-        "Sucursal":"Sucursal",
-        "Debe":"$ Debe",
-        "Haber":"$ Haber",
-        "Movimientos":{
-            "columns":[],
-            "default":{},
-            "items":[]
-        }
-    },
    "items":[
        {
            "Id":101,
             "Num":1,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"ban",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"aux",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
             "Debe":"$1.000.080",
             "Haber":"$1.000.080",
             "Movimientos": {
-                "columns":[
-                    {
-                        "key":"Remove",
-                        "class":"nivel-li borrar"
-                    },
-                    {                    
-                        "key":"Cliente",
-                        "class":"nivel-li normal left width-100-num-del"
-                    },
-                    {                    
-                        "key":"Documento",
-                        "class":"nivel-li normal left width-20"
-                    },
-                    {                    
-                        "key":"Numero",
-                        "class":"nivel-li normal left width-10"
-                    },
-                    {                    
-                        "key":"Fecha",
-                        "class":"nivel-li normal center width-15"
-                    },
-                    {                    
-                        "key":"Debe",
-                        "class":"nivel-li normal right width-10"
-                    },
-                    {                    
-                        "key":"Haber",
-                        "class":"nivel-li normal right width-10"
-                    },
-                    {                    
-                        "key":"Saldo",
-                        "class":"nivel-li normal right width-10"
-                    }
-                ],
-                "default":{
-                    "Id":0,
-                    "Remove":null,
-                    "Cliente":"Cliente",
-                    "Documento":"Tipo",
-                    "Numero":0,
-                    "Fecha":"Fecha de vencimiento",
-                    "Debe":"$ Debe",
-                    "Haber":"$ Haber",
-                    "Saldo":"$ Saldo"
-                },
                 "items":[
+                    {
+                        "Id":1024,
+                        "Remove":null,
+                        "Cliente":"76.106.001-5 ABA Y ROJAS LTDA DE CAMIONES",
+                        "Documento":"Factura Electrónica",
+                        "Numero":352,
+                        "Fecha":"13/06/2017",
+                        "Debe":"$15.000",
+                        "Haber":"$2.315.000",
+                        "Saldo":"$250"
+                    },
                     {
                         "Id":1024,
                         "Remove":null,
@@ -192,55 +43,13 @@
             "Num":2,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"ban",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"ban",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
             "Debe":"$1.000.080",
             "Haber":"$1.000.080",
             "Movimientos": {
-                "columns": [
-                    {
-                        "key":"Remove",
-                        "class":"nivel-li borrar"
-                    },
-                    {                    
-                        "key":"Cliente",
-                        "class":"nivel-li normal left width-100-num-del"
-                    },
-                    {                    
-                        "key":"Documento",
-                        "class":"nivel-li normal left width-20"
-                    },
-                    {                    
-                        "key":"Numero",
-                        "class":"nivel-li normal left width-10"
-                    },
-                    {                    
-                        "key":"Fecha",
-                        "class":"nivel-li normal center width-15"
-                    },
-                    {                    
-                        "key":"Debe",
-                        "class":"nivel-li normal right width-10"
-                    },
-                    {                    
-                        "key":"Haber",
-                        "class":"nivel-li normal right width-10"
-                    }],
-                "default":{
-                    "Id":0,
-                    "Remove":null,
-                    "Cliente":"Cliente",
-                    "Documento":"Tipo",
-                    "Numero":0,
-                    "Fecha":"Fecha de vencimiento",
-                    "Debe":"$ Debe",
-                    "Haber":"$ Haber"
-                },
                 "items": []
             }
         },
@@ -249,55 +58,13 @@
             "Num":3,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"aux",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"aux",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
             "Debe":"$1.000.080",
             "Haber":"$1.000.080",
             "Movimientos": {
-                "columns": [
-                    {
-                        "key":"Remove",
-                        "class":"nivel-li borrar"
-                    },
-                    {                    
-                        "key":"Cliente",
-                        "class":"nivel-li normal left width-100-num-del"
-                    },
-                    {                    
-                        "key":"Documento",
-                        "class":"nivel-li normal left width-20"
-                    },
-                    {                    
-                        "key":"Numero",
-                        "class":"nivel-li normal left width-10"
-                    },
-                    {                    
-                        "key":"Fecha",
-                        "class":"nivel-li normal center width-15"
-                    },
-                    {                    
-                        "key":"Debe",
-                        "class":"nivel-li normal right width-10"
-                    },
-                    {                    
-                        "key":"Haber",
-                        "class":"nivel-li normal right width-10"
-                    }],
-                "default":{
-                    "Id":0,
-                    "Remove":null,
-                    "Cliente":"Cliente",
-                    "Documento":"Tipo",
-                    "Numero":0,
-                    "Fecha":"Fecha de vencimiento",
-                    "Debe":"$ Debe",
-                    "Haber":"$ Haber"
-                },
                 "items": []
             }
         },
@@ -306,55 +73,13 @@
             "Num":4,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"aux",
-                "LabelClass":"nivel-li label collapsed"
-            },
+            "Tipo":"aux",
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
             "Debe":"$1.000.080",
             "Haber":"$1.000.080",
             "Movimientos": {
-                "columns": [
-                    {
-                        "key":"Remove",
-                        "class":"nivel-li borrar"
-                    },
-                    {                    
-                        "key":"Cliente",
-                        "class":"nivel-li normal left width-100-num-del"
-                    },
-                    {                    
-                        "key":"Documento",
-                        "class":"nivel-li normal left width-20"
-                    },
-                    {                    
-                        "key":"Numero",
-                        "class":"nivel-li normal left width-10"
-                    },
-                    {                    
-                        "key":"Fecha",
-                        "class":"nivel-li normal center width-15"
-                    },
-                    {                    
-                        "key":"Debe",
-                        "class":"nivel-li normal right width-10"
-                    },
-                    {                    
-                        "key":"Haber",
-                        "class":"nivel-li normal right width-10"
-                    }],
-                "default":{
-                    "Id":0,
-                    "Remove":null,
-                    "Cliente":"Cliente",
-                    "Documento":"Tipo",
-                    "Numero":0,
-                    "Fecha":"Fecha de vencimiento",
-                    "Debe":"$ Debe",
-                    "Haber":"$ Haber"
-                },
                 "items": []
             }
         },
@@ -363,55 +88,13 @@
             "Num":5,
             "Remove": null,
             "Cuenta":"1103 - 01 tu cerveza SPA",
-            "Tipo": {
-                "Label":"hon",
-                "LabelClass":"nivel-li label-noexpand"
-            },            
+            "Tipo":"hon",     
             "Glosa":"descripción",
             "CentroCostos":"administración",
             "Sucursal":"centro-sur",
             "Debe":"$1.000.080",
             "Haber":"$1.000.080",
             "Movimientos": {
-                "columns": [
-                    {
-                        "key":"Remove",
-                        "class":"nivel-li borrar"
-                    },
-                    {                    
-                        "key":"Cliente",
-                        "class":"nivel-li normal left width-100-num-del"
-                    },
-                    {                    
-                        "key":"Documento",
-                        "class":"nivel-li normal left width-20"
-                    },
-                    {                    
-                        "key":"Numero",
-                        "class":"nivel-li normal left width-10"
-                    },
-                    {                    
-                        "key":"Fecha",
-                        "class":"nivel-li normal center width-15"
-                    },
-                    {                    
-                        "key":"Debe",
-                        "class":"nivel-li normal right width-10"
-                    },
-                    {                    
-                        "key":"Haber",
-                        "class":"nivel-li normal right width-10"
-                    }],
-                "default":{
-                    "Id":0,
-                    "Remove":null,
-                    "Cliente":"Cliente",
-                    "Documento":"Tipo",
-                    "Numero":0,
-                    "Fecha":"Fecha de vencimiento",
-                    "Debe":"$ Debe",
-                    "Haber":"$ Haber"
-                },
                 "items": []
             }
         }

@@ -47,7 +47,7 @@ let jqxInput = React.createClass ({
     }
     $('#' +this.componentSelector).jqxInput(options);
   },
-  generateID : function () {    
+  generateID : function () {
     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   },
   setOptions: function (options) {
@@ -71,151 +71,151 @@ let jqxInput = React.createClass ({
   },
   disabled: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("disabled", arg)
+      $('#' +this.componentSelector).jqxInput('disabled', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("disabled");
+      return $('#' +this.componentSelector).jqxInput('disabled');
     }
   },
   dropDownWidth: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("dropDownWidth", arg)
+      $('#' +this.componentSelector).jqxInput('dropDownWidth', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("dropDownWidth");
+      return $('#' +this.componentSelector).jqxInput('dropDownWidth');
     }
   },
   displayMember: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("displayMember", arg)
+      $('#' +this.componentSelector).jqxInput('displayMember', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("displayMember");
+      return $('#' +this.componentSelector).jqxInput('displayMember');
     }
   },
   height: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("height", arg)
+      $('#' +this.componentSelector).jqxInput('height', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("height");
+      return $('#' +this.componentSelector).jqxInput('height');
     }
   },
   items: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("items", arg)
+      $('#' +this.componentSelector).jqxInput('items', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("items");
+      return $('#' +this.componentSelector).jqxInput('items');
     }
   },
   minLength: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("minLength", arg)
+      $('#' +this.componentSelector).jqxInput('minLength', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("minLength");
+      return $('#' +this.componentSelector).jqxInput('minLength');
     }
   },
   maxLength: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("maxLength", arg)
+      $('#' +this.componentSelector).jqxInput('maxLength', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("maxLength");
+      return $('#' +this.componentSelector).jqxInput('maxLength');
     }
   },
   opened: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("opened", arg)
+      $('#' +this.componentSelector).jqxInput('opened', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("opened");
+      return $('#' +this.componentSelector).jqxInput('opened');
     }
   },
   placeHolder: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("placeHolder", arg)
+      $('#' +this.componentSelector).jqxInput('placeHolder', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("placeHolder");
+      return $('#' +this.componentSelector).jqxInput('placeHolder');
     }
   },
   popupZIndex: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("popupZIndex", arg)
+      $('#' +this.componentSelector).jqxInput('popupZIndex', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("popupZIndex");
+      return $('#' +this.componentSelector).jqxInput('popupZIndex');
     }
   },
   query: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("query", arg)
+      $('#' +this.componentSelector).jqxInput('query', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("query");
+      return $('#' +this.componentSelector).jqxInput('query');
     }
   },
   renderer: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("renderer", arg)
+      $('#' +this.componentSelector).jqxInput('renderer', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("renderer");
+      return $('#' +this.componentSelector).jqxInput('renderer');
     }
   },
   rtl: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("rtl", arg)
+      $('#' +this.componentSelector).jqxInput('rtl', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("rtl");
+      return $('#' +this.componentSelector).jqxInput('rtl');
     }
   },
   searchMode: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("searchMode", arg)
+      $('#' +this.componentSelector).jqxInput('searchMode', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("searchMode");
+      return $('#' +this.componentSelector).jqxInput('searchMode');
     }
   },
   source: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("source", arg)
+      $('#' +this.componentSelector).jqxInput('source', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("source");
+      return $('#' +this.componentSelector).jqxInput('source');
     }
   },
   theme: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("theme", arg)
+      $('#' +this.componentSelector).jqxInput('theme', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("theme");
+      return $('#' +this.componentSelector).jqxInput('theme');
     }
   },
   valueMember: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("valueMember", arg)
+      $('#' +this.componentSelector).jqxInput('valueMember', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("valueMember");
+      return $('#' +this.componentSelector).jqxInput('valueMember');
     }
   },
   width: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxInput("width", arg)
+      $('#' +this.componentSelector).jqxInput('width', arg)
     } else {
-      return $("#" +this.componentSelector).jqxInput("width");
+      return $('#' +this.componentSelector).jqxInput('width');
     }
   },
   destroy: function () {
-    $("#" + this.componentSelector).jqxInput("destroy");  
+    $('#' + this.componentSelector).jqxInput('destroy');
   },
   focus: function () {
-    $("#" + this.componentSelector).jqxInput("focus");  
+    $('#' + this.componentSelector).jqxInput('focus');
   },
   selectAll: function () {
-    $("#" + this.componentSelector).jqxInput("selectAll");  
+    $('#' + this.componentSelector).jqxInput('selectAll');
   },
   val: function (value) {
     if (value !== undefined) {
-      $("#" + this.componentSelector).jqxInput("val", value)
+      $('#' + this.componentSelector).jqxInput('val', value)
     } else {
-      return $("#" + this.componentSelector).jqxInput("val");
+      return $('#' + this.componentSelector).jqxInput('val');
     }
   },
 
   render: function () {
     var id = 'jqxInput' + this.generateID() + this.generateID();
     this.componentSelector = id;
-;    return (
+    return (
       <input type='text' id={id}></input>
     )
   }

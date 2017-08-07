@@ -11,7 +11,7 @@ class Cuerpo extends React.Component {
     }
 
     render() {
-        var incremental = 0
+        let incremental = 0
         return(
             <div className="body-comprobante">
                 <div className="cnt-body-comprobante">
@@ -19,12 +19,15 @@ class Cuerpo extends React.Component {
                         this.props.data.items.map((item, i) => {
                             i++
                             incremental=i
+                            let movimiento = (item['Tipo'] == 'aux') ? this.props.source.movimientos.auxiliar : this.props.source.movimientos.bancario
                             return(
                                 <Asiento
                                     key={incremental}
                                     item={item}
-                                    columns={this.props.data.columns}
+                                    item_columns={this.props.source.columns}
                                     movimientos={item.Movimientos}
+                                    movimientos_columns={movimiento.columns}
+                                    movimientos_default={movimiento.default}
                                     style="registro level-1"
                                     identificador={'registro_' + incremental} />
                             );
@@ -33,9 +36,11 @@ class Cuerpo extends React.Component {
 
                     <Asiento
                         key={incremental+1}
-                        item={this.props.data.default}
-                        columns={this.props.data.columns}
+                        item={this.props.source.default}
+                        item_columns={this.props.source.columns}
                         movimientos={null}
+                        movimientos_columns={null}
+                        movimientos_default={null}
                         style="registro level-1 placeholder"
                         identificador={'registro_' + (incremental+1)} />
 

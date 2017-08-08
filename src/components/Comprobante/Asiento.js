@@ -9,8 +9,20 @@ class Asiento extends React.Component {
     constructor(props)
     {
         super(props)
+        this.state = { style: this.props.style } 
+        this.enableRow = this.enableRow.bind(this)
     }
 
+     enableRow() {
+         this.setState(() => {
+             return {
+                 style: 'registro level-1'
+                }
+            });
+        
+        this.props.addItemDefault(this.props.item, this.props.index)
+    }
+    
     render() {
         var that = this;
         if (this.props.movimientos != null) {
@@ -26,7 +38,7 @@ class Asiento extends React.Component {
                             key={i+1}
                             movimiento={movimiento}
                             columns={this.props.movimientos_columns}
-                            style="registro level-2 level-sin-num"
+                            style='registro level-2 level-sin-num'
                             identificador={that.props.identificador + movimiento.Id} />
                         )
                     }
@@ -35,16 +47,15 @@ class Asiento extends React.Component {
                         key={0}
                         movimiento={this.props.movimientos_default}
                         columns={this.props.movimientos_columns}
-                        style="registro level-2 level-sin-num placeholder"
+                        style='registro level-2 level-sin-num placeholder'
                         identificador={that.props.identificador + String(Math.random()).split('.')[1]} />
-
 
                 </div>
             )
         }
         else {
             return(
-                <div className={this.props.style} id={this.props.identificador}>
+                <div className={this.state.style} id={this.props.identificador} onDoubleClick={this.enableRow}>
                     <Fila
                         item={this.props.item}
                         columns={this.props.item_columns} />

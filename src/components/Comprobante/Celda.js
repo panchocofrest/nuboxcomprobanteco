@@ -99,7 +99,6 @@ class Celda extends React.Component {
         }
 
         if(this.props.llave === 'Tipo') {
-            debugger
             let style = (this.props.value === 'ban' || this.props.value === 'aux') ? 'label collapsed' : 'label-noexpand'
             let css = 'nivel-li ' + this.props.value + ' ' + style
             return(

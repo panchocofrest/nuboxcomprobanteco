@@ -46,7 +46,7 @@ let jqxCalendar = React.createClass ({
     }
     $('#' +this.componentSelector).jqxCalendar(options);
   },
-  generateID : function () {    
+  generateID : function () {
     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   },
   setOptions: function (options) {
@@ -70,323 +70,322 @@ let jqxCalendar = React.createClass ({
   },
   backText: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("backText", arg)
+      $('#' +this.componentSelector).jqxCalendar('backText', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("backText");
+      return $('#' +this.componentSelector).jqxCalendar('backText');
     }
   },
   columnHeaderHeight: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("columnHeaderHeight", arg)
+      $('#' +this.componentSelector).jqxCalendar('columnHeaderHeight', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("columnHeaderHeight");
+      return $('#' +this.componentSelector).jqxCalendar('columnHeaderHeight');
     }
   },
   clearString: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("clearString", arg)
+      $('#' +this.componentSelector).jqxCalendar('clearString', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("clearString");
+      return $('#' +this.componentSelector).jqxCalendar('clearString');
     }
   },
   culture: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("culture", arg)
+      $('#' +this.componentSelector).jqxCalendar('culture', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("culture");
+      return $('#' +this.componentSelector).jqxCalendar('culture');
     }
   },
   dayNameFormat: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("dayNameFormat", arg)
+      $('#' +this.componentSelector).jqxCalendar('dayNameFormat', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("dayNameFormat");
+      return $('#' +this.componentSelector).jqxCalendar('dayNameFormat');
     }
   },
   disabled: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("disabled", arg)
+      $('#' +this.componentSelector).jqxCalendar('disabled', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("disabled");
+      return $('#' +this.componentSelector).jqxCalendar('disabled');
     }
   },
   enableWeekend: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableWeekend", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableWeekend', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableWeekend");
+      return $('#' +this.componentSelector).jqxCalendar('enableWeekend');
     }
   },
   enableViews: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableViews", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableViews', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableViews");
+      return $('#' +this.componentSelector).jqxCalendar('enableViews');
     }
   },
   enableOtherMonthDays: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableOtherMonthDays", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableOtherMonthDays', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableOtherMonthDays");
+      return $('#' +this.componentSelector).jqxCalendar('enableOtherMonthDays');
     }
   },
   enableFastNavigation: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableFastNavigation", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableFastNavigation', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableFastNavigation");
+      return $('#' +this.componentSelector).jqxCalendar('enableFastNavigation');
     }
   },
   enableHover: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableHover", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableHover', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableHover");
+      return $('#' +this.componentSelector).jqxCalendar('enableHover');
     }
   },
   enableAutoNavigation: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableAutoNavigation", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableAutoNavigation', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableAutoNavigation");
+      return $('#' +this.componentSelector).jqxCalendar('enableAutoNavigation');
     }
   },
   enableTooltips: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("enableTooltips", arg)
+      $('#' +this.componentSelector).jqxCalendar('enableTooltips', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("enableTooltips");
+      return $('#' +this.componentSelector).jqxCalendar('enableTooltips');
     }
   },
   forwardText: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("forwardText", arg)
+      $('#' +this.componentSelector).jqxCalendar('forwardText', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("forwardText");
+      return $('#' +this.componentSelector).jqxCalendar('forwardText');
     }
   },
   firstDayOfWeek: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("firstDayOfWeek", arg)
+      $('#' +this.componentSelector).jqxCalendar('firstDayOfWeek', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("firstDayOfWeek");
+      return $('#' +this.componentSelector).jqxCalendar('firstDayOfWeek');
     }
   },
   height: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("height", arg)
+      $('#' +this.componentSelector).jqxCalendar('height', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("height");
+      return $('#' +this.componentSelector).jqxCalendar('height');
     }
   },
   min: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("min", arg)
+      $('#' +this.componentSelector).jqxCalendar('min', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("min");
+      return $('#' +this.componentSelector).jqxCalendar('min');
     }
   },
   max: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("max", arg)
+      $('#' +this.componentSelector).jqxCalendar('max', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("max");
+      return $('#' +this.componentSelector).jqxCalendar('max');
     }
   },
   navigationDelay: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("navigationDelay", arg)
+      $('#' +this.componentSelector).jqxCalendar('navigationDelay', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("navigationDelay");
+      return $('#' +this.componentSelector).jqxCalendar('navigationDelay');
     }
   },
   rowHeaderWidth: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("rowHeaderWidth", arg)
+      $('#' +this.componentSelector).jqxCalendar('rowHeaderWidth', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("rowHeaderWidth");
+      return $('#' +this.componentSelector).jqxCalendar('rowHeaderWidth');
     }
   },
   readOnly: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("readOnly", arg)
+      $('#' +this.componentSelector).jqxCalendar('readOnly', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("readOnly");
+      return $('#' +this.componentSelector).jqxCalendar('readOnly');
     }
   },
   restrictedDates: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("restrictedDates", arg)
+      $('#' +this.componentSelector).jqxCalendar('restrictedDates', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("restrictedDates");
+      return $('#' +this.componentSelector).jqxCalendar('restrictedDates');
     }
   },
   rtl: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("rtl", arg)
+      $('#' +this.componentSelector).jqxCalendar('rtl', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("rtl");
+      return $('#' +this.componentSelector).jqxCalendar('rtl');
     }
   },
   stepMonths: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("stepMonths", arg)
+      $('#' +this.componentSelector).jqxCalendar('stepMonths', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("stepMonths");
+      return $('#' +this.componentSelector).jqxCalendar('stepMonths');
     }
   },
   showWeekNumbers: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("showWeekNumbers", arg)
+      $('#' +this.componentSelector).jqxCalendar('showWeekNumbers', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("showWeekNumbers");
+      return $('#' +this.componentSelector).jqxCalendar('showWeekNumbers');
     }
   },
   showDayNames: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("showDayNames", arg)
+      $('#' +this.componentSelector).jqxCalendar('showDayNames', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("showDayNames");
+      return $('#' +this.componentSelector).jqxCalendar('showDayNames');
     }
   },
   showOtherMonthDays: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("showOtherMonthDays", arg)
+      $('#' +this.componentSelector).jqxCalendar('showOtherMonthDays', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("showOtherMonthDays");
+      return $('#' +this.componentSelector).jqxCalendar('showOtherMonthDays');
     }
   },
   showFooter: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("showFooter", arg)
+      $('#' +this.componentSelector).jqxCalendar('showFooter', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("showFooter");
+      return $('#' +this.componentSelector).jqxCalendar('showFooter');
     }
   },
   selectionMode: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("selectionMode", arg)
+      $('#' +this.componentSelector).jqxCalendar('selectionMode', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("selectionMode");
+      return $('#' +this.componentSelector).jqxCalendar('selectionMode');
     }
   },
   specialDates: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("specialDates", arg)
+      $('#' +this.componentSelector).jqxCalendar('specialDates', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("specialDates");
+      return $('#' +this.componentSelector).jqxCalendar('specialDates');
     }
   },
   theme: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("theme", arg)
+      $('#' +this.componentSelector).jqxCalendar('theme', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("theme");
+      return $('#' +this.componentSelector).jqxCalendar('theme');
     }
   },
   titleHeight: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("titleHeight", arg)
+      $('#' +this.componentSelector).jqxCalendar('titleHeight', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("titleHeight");
+      return $('#' +this.componentSelector).jqxCalendar('titleHeight');
     }
   },
   titleFormat: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("titleFormat", arg)
+      $('#' +this.componentSelector).jqxCalendar('titleFormat', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("titleFormat");
+      return $('#' +this.componentSelector).jqxCalendar('titleFormat');
     }
   },
   todayString: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("todayString", arg)
+      $('#' +this.componentSelector).jqxCalendar('todayString', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("todayString");
+      return $('#' +this.componentSelector).jqxCalendar('todayString');
     }
   },
   value: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("value", arg)
+      $('#' +this.componentSelector).jqxCalendar('value', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("value");
+      return $('#' +this.componentSelector).jqxCalendar('value');
     }
   },
   width: function (arg) {
     if (arg !== undefined) {
-      $("#" +this.componentSelector).jqxCalendar("width", arg)
+      $('#' +this.componentSelector).jqxCalendar('width', arg)
     } else {
-      return $("#" +this.componentSelector).jqxCalendar("width");
+      return $('#' +this.componentSelector).jqxCalendar('width');
     }
   },
   clear: function () {
-    $("#" + this.componentSelector).jqxCalendar("clear");  
+    $('#' + this.componentSelector).jqxCalendar('clear');
   },
   destroy: function () {
-    $("#" + this.componentSelector).jqxCalendar("destroy");  
+    $('#' + this.componentSelector).jqxCalendar('destroy');
   },
   focus: function () {
-    $("#" + this.componentSelector).jqxCalendar("focus");  
+    $('#' + this.componentSelector).jqxCalendar('focus');
   },
   addSpecialDate: function (date, tooltip, text) {
-    $("#" + this.componentSelector).jqxCalendar("addSpecialDate", date, tooltip, text);  
+    $('#' + this.componentSelector).jqxCalendar('addSpecialDate', date, tooltip, text);
   },
   getMinDate: function () {
-    return $("#" + this.componentSelector).jqxCalendar("getMinDate");  
+    return $('#' + this.componentSelector).jqxCalendar('getMinDate');
   },
   getMaxDate: function () {
-    return $("#" + this.componentSelector).jqxCalendar("getMaxDate");  
+    return $('#' + this.componentSelector).jqxCalendar('getMaxDate');
   },
   getDate: function () {
-    return $("#" + this.componentSelector).jqxCalendar("getDate");  
+    return $('#' + this.componentSelector).jqxCalendar('getDate');
   },
   getRange: function () {
-    return $("#" + this.componentSelector).jqxCalendar("getRange");  
+    return $('#' + this.componentSelector).jqxCalendar('getRange');
   },
   navigateForward: function (months) {
-    $("#" + this.componentSelector).jqxCalendar("navigateForward", months);  
+    $('#' + this.componentSelector).jqxCalendar('navigateForward', months);
   },
   navigateBackward: function (months) {
-    $("#" + this.componentSelector).jqxCalendar("navigateBackward", months);  
+    $('#' + this.componentSelector).jqxCalendar('navigateBackward', months);
   },
   performRender: function () {
-    $("#" + this.componentSelector).jqxCalendar("render");
+    $('#' + this.componentSelector).jqxCalendar('render');
   },
   refresh: function () {
-    $("#" + this.componentSelector).jqxCalendar("refresh");  
+    $('#' + this.componentSelector).jqxCalendar('refresh');
   },
   setMinDate: function (date) {
-    $("#" + this.componentSelector).jqxCalendar("setMinDate", date);  
+    $('#' + this.componentSelector).jqxCalendar('setMinDate', date);
   },
   setMaxDate: function (date) {
-    $("#" + this.componentSelector).jqxCalendar("setMaxDate", date);  
+    $('#' + this.componentSelector).jqxCalendar('setMaxDate', date);
   },
   setDate: function (date) {
-    $("#" + this.componentSelector).jqxCalendar("setDate", date);  
+    $('#' + this.componentSelector).jqxCalendar('setDate', date);
   },
   setRange: function (date, date2) {
-    $("#" + this.componentSelector).jqxCalendar("setRange", date, date2);  
+    $('#' + this.componentSelector).jqxCalendar('setRange', date, date2);
   },
   today: function () {
-    $("#" + this.componentSelector).jqxCalendar("today");  
+    $('#' + this.componentSelector).jqxCalendar('today');
   },
   val: function (date, date2) {
     if (value !== undefined) {
-      $("#" + this.componentSelector).jqxCalendar("val", date, date2)
+      $('#' + this.componentSelector).jqxCalendar('val', date, date2)
     } else {
-      return $("#" + this.componentSelector).jqxCalendar("val");
+      return $('#' + this.componentSelector).jqxCalendar('val');
     }
   },
 
   render: function () {
     var id = 'jqxCalendar' + this.generateID() + this.generateID();
     this.componentSelector = id;
-;    return (
+    return (
       <div id={id}>{this.value ? null : this.props.value}{this.props.children}</div>
     )
   }
 });
 
 module.exports = jqxCalendar;
-

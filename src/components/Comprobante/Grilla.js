@@ -11,39 +11,52 @@ class Grilla extends React.Component {
     super(props)
     this.state = {
       data: {
-        header: [],
-        columns: [],
         items: []
       }
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     let api = this.props.url
     fetch(api)
       .then((response) => {
         return response.json()
       })
       .then((data) => {
-        this.setState({ data: data })
+        this.setState({ data: data }, function() { console.log(data) })
       })
   }
 
   render() {
-    return (
-      <div id="grid" className="modal-body">
-        <div className="cnt-comprobante">
+    if (this.state.data.items.length > 0) {
+      return (
+        <div id='grid' className='modal-body'>
+          <div className='cnt-comprobante'>
 
-          <Cabecera
-            columns={this.props.source.columns} />
+            <Cabecera
+              columns={this.props.source.columns} />
 
-          <Cuerpo
-            source={this.props.source}
-            data={this.state.data} />
+            <Cuerpo
+              source={this.props.source}
+              data={this.state.data}
+              loadGrilla={this.loadGrilla} />
 
+          </div>
         </div>
-      </div>
-    );
+      )
+    }
+    else {
+      return (
+        <div id='grid' className='modal-body'>
+          <div className='cnt-comprobante'>
+
+            <Cabecera
+              columns={this.props.source.columns} />
+
+          </div>
+        </div>
+      )
+    }
   }
 }
 

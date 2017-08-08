@@ -13,6 +13,7 @@ class Asiento extends React.Component {
         this.state = { style: this.props.style } 
         this.enableRow = this.enableRow.bind(this)
         this.addMovDefault = this.addMovDefault.bind(this)
+        this.validarCss = this.validarCss.bind(this)
     }
     
     enableRow(event) {
@@ -34,6 +35,7 @@ class Asiento extends React.Component {
     }
     
     validarCss(key) {
+        
         var Label = $('#' + key)
         if (Label.hasClass('activo')){
             $(Label).find('.level-2').each(function(index, value) {

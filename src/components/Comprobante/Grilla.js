@@ -14,6 +14,7 @@ class Grilla extends React.Component {
         items: []
       }
     }
+    this.reloadData = this.reloadData.bind(this)
   }
 
   componentWillMount(){
@@ -27,6 +28,11 @@ class Grilla extends React.Component {
       })
   }
 
+  reloadData(data) {
+    
+    this.setState({ data: data }, function() { /*console.log(data)*/ })
+  }
+
   render() {
     if (this.state.data.items.length > 0) {
       return (
@@ -38,7 +44,8 @@ class Grilla extends React.Component {
 
             <Cuerpo
               source={this.props.source}
-              data={this.state.data} />
+              data={this.state.data}
+              reloadData={this.reloadData} />
 
           </div>
         </div>

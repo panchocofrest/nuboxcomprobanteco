@@ -13,6 +13,10 @@ class Movimiento extends React.Component {
         this.enableRowMov = this.enableRowMov.bind(this)
     }
 
+    componentWillMount() {
+        //console.log(this.props)
+    }
+
     enableRowMov(event) {
         if (!$(event.currentTarget).hasClass('placeholder'))
             return false

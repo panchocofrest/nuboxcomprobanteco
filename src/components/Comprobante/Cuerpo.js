@@ -9,28 +9,29 @@ class Cuerpo extends React.Component {
     constructor(props)
     {
         super(props)
-        this.state = { items: this.props.data.items }
         this.addItemDefault = this.addItemDefault.bind(this)
         this.addNuevoMov = this.addNuevoMov.bind(this)
     }
 
     addItemDefault(nuevoItem, i) {
-        var arr = this.state.items
+        var arr = this.props.data
         var item = JSON.parse(JSON.stringify({}));
         $.extend(item, nuevoItem);
         item.Num = i
-        arr.push(item)
-        this.setState({ items: arr }, function(){ /*console.log(this.state.items)*/ })
+        arr.items.push(item)
+        //this.setState({ items: arr }, function(){ /*console.log(this.state.items)*/ })
+        this.props.reloadData(arr)
     }
 
     addNuevoMov(nuevoMov, idItem) {
-        var arr = this.state.items
-        arr.forEach(function(element) {
+        var arr = this.props.data
+        arr.items.forEach(function(element) {
             if(element.Id === idItem) {
                 element.Movimientos.items.push(nuevoMov)
             }
         }, this);
-        this.setState({ items: arr }, function(){ /*console.log(this.state.items)*/ })
+        //this.setState({ items: arr }, function(){ /*console.log(this.state.items)*/ })
+        this.props.reloadData(arr)
     }
     
     render() {
@@ -39,7 +40,7 @@ class Cuerpo extends React.Component {
             <div className='body-comprobante'>
                 <div className='cnt-body-comprobante'>
                     {
-                        this.state.items.map((item, i) => {
+                        this.props.data.items.map((item, i) => {
                             i++
                             incremental=i
                             let movimiento = (item['Tipo'] == 'aux') ? this.props.source.movimientos.auxiliar : this.props.source.movimientos.bancario

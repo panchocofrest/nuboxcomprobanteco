@@ -45,6 +45,10 @@ class Asiento extends React.Component {
             })
         }
     }
+
+    componentDidUpdate() {
+        this.validarCss(this.props.identificador)
+    }
     
     render() {
         var that = this;
@@ -67,8 +71,6 @@ class Asiento extends React.Component {
                             )
                         })
                     }
-
-                    {this.validarCss(this.props.identificador)}
                     
                     <Movimiento
                         key={0}

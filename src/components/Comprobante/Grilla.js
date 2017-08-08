@@ -23,7 +23,7 @@ class Grilla extends React.Component {
         return response.json()
       })
       .then((data) => {
-        this.setState({ data: data }, function() { console.log(data) })
+        this.setState({ data: data }, function() { /*console.log(data)*/ })
       })
   }
 
@@ -38,8 +38,7 @@ class Grilla extends React.Component {
 
             <Cuerpo
               source={this.props.source}
-              data={this.state.data}
-              loadGrilla={this.loadGrilla} />
+              data={this.state.data} />
 
           </div>
         </div>

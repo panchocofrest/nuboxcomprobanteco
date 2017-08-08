@@ -11,6 +11,7 @@ class Cuerpo extends React.Component {
         super(props)
         this.state = { items: this.props.data.items }
         this.addItemDefault = this.addItemDefault.bind(this)
+        this.addNuevoMov = this.addNuevoMov.bind(this)
     }
 
     addItemDefault(nuevoItem, i) {
@@ -19,7 +20,17 @@ class Cuerpo extends React.Component {
         $.extend(item, nuevoItem);
         item.Num = i
         arr.push(item)
-        this.setState({ items: arr }, function(){ console.log(this.state.items) })
+        this.setState({ items: arr }, function(){ /*console.log(this.state.items)*/ })
+    }
+
+    addNuevoMov(nuevoMov, idItem) {
+        var arr = this.state.items
+        arr.forEach(function(element) {
+            if(element.Id === idItem) {
+                element.Movimientos.items.push(nuevoMov)
+            }
+        }, this);
+        this.setState({ items: arr }, function(){ /*console.log(this.state.items)*/ })
     }
     
     render() {
@@ -40,6 +51,7 @@ class Cuerpo extends React.Component {
                                     movimientos={item.Movimientos}
                                     movimientos_columns={movimiento.columns}
                                     movimientos_default={movimiento.default}
+                                    addNuevoMov={this.addNuevoMov}
                                     style='registro level-1'
                                     identificador={'registro_' + incremental} />
                             );

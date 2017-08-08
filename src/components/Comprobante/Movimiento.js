@@ -1,6 +1,7 @@
 require('normalize.css/normalize.css');
 
 import React from 'react';
+import $ from 'jquery';
 import Celda from './Celda';
 
 class Movimiento extends React.Component {
@@ -8,6 +9,21 @@ class Movimiento extends React.Component {
     constructor(props)
     {
         super(props)
+        this.state = { style: this.props.style }
+        this.enableRowMov = this.enableRowMov.bind(this)
+    }
+
+    enableRowMov(event) {
+        if (!$(event.currentTarget).hasClass('placeholder'))
+            return false
+            
+        // this.setState(() => {
+        //     return {
+        //         style: 'registro level-2 level-sin-num'
+        //     }
+        // });
+
+        this.props.addMovDefault(this.props.movimiento)
     }
 
     renderCelda(column, i) {
@@ -17,7 +33,6 @@ class Movimiento extends React.Component {
         
         let css = (column.start === true) ? width + '-' + style : style + ' ' + width
         let classname = 'nivel-li ' + css + ' ' + align
-
         return(
             <Celda
                 key={i}
@@ -29,7 +44,7 @@ class Movimiento extends React.Component {
 
     render() {
         return(
-            <div className={this.props.style} id={this.props.identificador}>
+            <div className={this.state.style} id={this.props.identificador} onDoubleClick={this.enableRowMov}>
                 <ul className="nivel-ul">
                     { this.props.columns.map((column, i) => this.renderCelda(column, i)) }
                 </ul>

@@ -226,11 +226,15 @@ class Celda extends React.Component {
                 )
             } else {
                  let fecha = this.state.valor.split('-')
+                 let date = new Date()
+                 if(fecha.length > 1){
+                  date = new Date(fecha[2], fecha[1] - 1, fecha[0])
+                 }
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
                         <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
                             width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
-                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}  value={new Date(fecha[2], fecha[1] - 1, fecha[0])}
+                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}  value={date}
 
                         />
                     </li>
@@ -247,11 +251,15 @@ class Celda extends React.Component {
                 )
             } else {
                  let fecha = this.state.valor.split('-')
+                 let date = new Date()
+                 if(fecha.length > 1){
+                  date = new Date(fecha[2], fecha[1] - 1, fecha[0])
+                 }
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
                         <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
                             width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
-                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40} value={new Date(fecha[2], fecha[1] - 1, fecha[0])}
+                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40} value={date}
                         />
                     </li>
                 )

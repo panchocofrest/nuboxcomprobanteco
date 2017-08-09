@@ -7,29 +7,19 @@ import JqxButton from '../../public/js/jqwidgets-react/react_jqxbuttons.js';
 import JqxCalendar from '../../public/js/jqwidgets-react/react_jqxcalendar.js';
 import JqxPanel from '../../public/js/jqwidgets-react/react_jqxpanel.js';
 import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownlist.js';
+import JqxDateTimeInput from '../../public/js/jqwidgets-react/react_jqxdatetimeinput.js';
 
 class Celda extends React.Component {
 
-
-
-
     constructor(props) {
         super(props)
-
-
         this.state = { flagControl: true, valor: '', clientes: [], centrocosto: [] }
         this.expanded.bind(this)
         this.cargaControl = this.cargaControl.bind(this)
         this.renderCelda = this.renderCelda.bind(this)
         this.componentDidMount = this.componentDidMount.bind(this)
-        this.inputChange = this.inputChange.bind(this)
         this.changeControlVal = this.changeControlVal.bind(this)
-
-
     }
-
-
-
 
     componentDidMount() {
         this.setState(() => {
@@ -52,10 +42,6 @@ class Celda extends React.Component {
             };
         });
     }
-
-    inputChange() {
-    }
-
 
     expanded(event) {
         var Label = $(event.currentTarget);
@@ -94,15 +80,9 @@ class Celda extends React.Component {
     }
 
 
-
     cargaControl(event) {
-
         if (!$(event.currentTarget).parent().parent().hasClass('placeholder')) {
-
             this.setState(() => {
-
-                console.log(this.state.flagControl)
-                console.log(this.props)
 
                 if (!this.state.flagControl) {
 
@@ -123,39 +103,42 @@ class Celda extends React.Component {
 
                     if (this.props.tipoControl == "Dropdown") {
                         this.refs.controlJqxWidget.on('select', (event) => {
+
                             let args = event.args;
                             let item = this.refs.controlJqxWidget.getItem(args.index);
 
                             if (item != null) {
+                                this.changeControlVal(item.label)
 
                             }
-                            this.changeControlVal(item.label)
-
                         });
+
                     }
 
                     if (this.props.tipoControl == "Calendar") {
 
-                        this.refs.controlJqxWidget.on('click', (event) => {
 
-                            console.log(event)
-                            var date = new Date(event.timeStamp * 1000);
-                            console.log(date.getDate() + '/' + date.getMonth() + '/' + date.getMonth())
-                            this.changeControlVal(date.getDate() + '/' + date.getMonth() + '/' + date.getMonth())
+                        var date = this.refs.controlJqxWidget.getDate();
+                        console.log(date.getDate() + '/' + date.getMonth() + '/' + date.getMonth())
+                        // this.changeControlVal(date.getDate() + '/' + date.getMonth()  + '/' + date.getMonth() )
+                    }
+
+                    if (this.props.tipoControl == "DateTimeInput") {
+
+                        this.refs.controlJqxWidget.on('change', (event) => {
+                            var date = this.refs.controlJqxWidget.val();
+                            console.log(date)
+                            this.changeControlVal(date)
                         });
-
-
 
                     }
                 }
                 return { flagControl: false };
             });
         }
-
     }
 
     renderCelda() {
-
         if (this.props.llave === 'Remove') {
             return (
                 <li className={this.props.style}></li>
@@ -179,12 +162,11 @@ class Celda extends React.Component {
             } else {
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' onClick={this.inputChange.bind(this)} theme={'nubox'} />
+                        <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' theme={'nubox'} />
                     </li>
                 )
             }
         }
-
 
         if (this.props.llave === 'Cliente') {
 
@@ -211,8 +193,9 @@ class Celda extends React.Component {
             } else {
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxCalendar ref='controlJqxWidget' style={{ marginTop: 3 }}
-                            width={220} height={220} theme={'nubox'}
+                        <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
+                            width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
+                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}
                         />
                     </li>
                 )
@@ -228,7 +211,7 @@ class Celda extends React.Component {
             } else {
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.centrocosto} selectedIndex={1} theme={'nubox'} />
+                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.centrocosto} placeHolder={"Seleccione:"} theme={'nubox'} />
                     </li>
                 )
             }
@@ -243,13 +226,11 @@ class Celda extends React.Component {
             } else {
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.sucursales} selectedIndex={1} theme={'nubox'} />
+                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.sucursales} placeHolder={"Seleccione:"} theme={'nubox'} />
                     </li>
                 )
             }
         }
-
-
 
         return (
             <li className={this.props.style} tabIndex=''>{this.props.value}</li>

@@ -13,15 +13,18 @@ class Celda extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { flagControl: true, valor: '', clientes: [], centrocosto: [], tipoDocumento: [] }
+        this.state = { flagControl: true, valor: '', clientes: [], centrocosto: [], tipoDocumento: [] ,controlTemp: false}
         this.expanded.bind(this)
         this.cargaControl = this.cargaControl.bind(this)
         this.renderCelda = this.renderCelda.bind(this)
         this.componentDidMount = this.componentDidMount.bind(this)
         this.changeControlVal = this.changeControlVal.bind(this)
+        this.eventSet = this.eventSet.bind(this)
     }
 
+   
     componentDidMount() {
+
         this.setState(() => {
             return { valor: this.props.value };
         });
@@ -51,6 +54,12 @@ class Celda extends React.Component {
                 ]
             };
         });
+
+       
+    }
+
+    componentWillMount(){
+         
     }
 
     expanded(event) {
@@ -82,20 +91,14 @@ class Celda extends React.Component {
         });
     }
 
-    changeControlVal(valor) {
+     eventSet(event){
+            console.log('eventSet')
+            console.log(this.refs.controlJqxWidget)
 
-        this.setState(() => {
-            return { valor: valor, flagControl: true };
-        });
-    }
-
-    cargaControl(event) {
-        if (!$(event.currentTarget).parent().parent().hasClass('placeholder')) {
-            this.setState(() => {
-
-                if (!this.state.flagControl) {
+           if (!this.state.flagControl) {
 
                     if (this.props.tipoControl == "Input") {
+                        this.refs.controlJqxWidget.focus()
                         this.refs.controlJqxWidget.on('change', (event) =>
 
                             this.changeControlVal(event.target.value)
@@ -104,6 +107,7 @@ class Celda extends React.Component {
                     }
 
                     if (this.props.tipoControl == "Autocomplete") {
+                        this.refs.controlJqxWidget.focus()
                         this.refs.controlJqxWidget.on('change', (event) =>
 
                             this.changeControlVal(event.target.value)
@@ -125,7 +129,7 @@ class Celda extends React.Component {
                     }
 
                     if (this.props.tipoControl == "DateTimeInput") {
-
+                        this.refs.controlJqxWidget.open()
                         this.refs.controlJqxWidget.on('close', (event) => {
                             var date = this.refs.controlJqxWidget.val();
 
@@ -135,14 +139,36 @@ class Celda extends React.Component {
                     }
 
                     if (this.props.tipoControl === undefined) {
+                        this.refs.controlJqxWidget.focus()
                         this.refs.controlJqxWidget.on('change', (event) =>
                             this.changeControlVal(event.target.value)
                         );
 
                     }
                 }
-                return { flagControl: false };
-            });
+
+
+    }
+
+
+    changeControlVal(valor) {
+
+        this.setState(() => {
+            return { valor: valor, flagControl: true };
+        });
+    }
+
+    cargaControl(event) {
+        console.log('cargaControl')
+        if (!$(event.currentTarget).parent().parent().hasClass('placeholder')) {
+            
+          
+            this.setState({flagControl:false},function(){
+                this.setState({controlTemp:true},function(){
+                    this.eventSet()
+                })
+            })
+           
         }
     }
 
@@ -161,22 +187,6 @@ class Celda extends React.Component {
                 <li className={css.trim()} onClick={this.expanded}></li>
             )
         }
-
-        /*if (this.props.llave === 'Glosa') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                )
-            } else {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' theme={'nubox'} />
-                    </li>
-                )
-            }
-        }*/
-
         if (this.props.llave === 'Cliente') {
 
             if (this.state.flagControl) {
@@ -221,6 +231,7 @@ class Celda extends React.Component {
                         <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
                             width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
                             culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}  value={new Date(fecha[2], fecha[1] - 1, fecha[0])}
+
                         />
                     </li>
                 )
@@ -276,10 +287,7 @@ class Celda extends React.Component {
                 )
             }
         }
-
-        //return (
-        //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
-
+    
         if (this.state.flagControl) {
             return (
                 <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>

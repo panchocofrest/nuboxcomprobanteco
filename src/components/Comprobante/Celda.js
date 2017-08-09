@@ -115,14 +115,6 @@ class Celda extends React.Component {
 
                     }
 
-                    if (this.props.tipoControl == "Calendar") {
-
-
-                        var date = this.refs.controlJqxWidget.getDate();
-                        console.log(date.getDate() + '/' + date.getMonth() + '/' + date.getMonth())
-                        // this.changeControlVal(date.getDate() + '/' + date.getMonth()  + '/' + date.getMonth() )
-                    }
-
                     if (this.props.tipoControl == "DateTimeInput") {
 
                         this.refs.controlJqxWidget.on('change', (event) => {

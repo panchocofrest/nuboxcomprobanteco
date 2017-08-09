@@ -21,6 +21,7 @@
                         "Documento":"Factura Electrónica",
                         "Numero":352,
                         "Fecha":"13-06-2017",
+                        "FechaInicio":"01-08-2017",
                         "Debe":"$15.000",
                         "Haber":"$2.315.000",
                         "Saldo":"$250"
@@ -32,6 +33,7 @@
                         "Documento":"Factura Electrónica",
                         "Numero":352,
                         "Fecha":"13-06-2017",
+                        "FechaInicio":"01-08-2017",
                         "Debe":"$15.000",
                         "Haber":"$2.315.000",
                         "Saldo":"$250"

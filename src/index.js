@@ -19,28 +19,29 @@ var source = {
     movimientos: {
         aux: {
             columns: [
-                { key:'Remove', position:0, start: false, row:{ class:'borrar', align:null, width:null, type:null } },
-                { tipoControl:'Autocomplete',key:'Cliente', position:1, start: true, row:{ class:'num-del normal', align:'left', width:100, type:null } },
-                { key:'Documento', position:2, start: false, row:{ class:'normal', align:'left', width:20, type:null } },
-                { key:'Numero', position:3, start: false, row:{ class:'normal', align:'left', width:10, type:null } },
-                { tipoControl:'DateTimeInput',key:'Fecha', position:4, start: false, row:{ class:'normal', align:'center', width:15, type:null } },
-                { key:'Debe', position:5, start: false, row:{ class:'normal', align:'right', width:10, type:null } },
-                { key:'Haber', position:6, start: false, row:{ class:'normal', align:'right', width:10, type:null } },
-                { key:'Saldo', position:7, start: false, row:{ class:'normal', align:'right', width:10, type:null } }
+                { key: 'Remove', position: 0, start: false, row: { class: 'borrar', align: null, width: null, type: null } },
+                { tipoControl: 'Autocomplete', key: 'Cliente', position: 1, start: true, row: { class: 'num-del normal', align: 'left', width: 100, type: null } },
+                { tipoControl: 'Dropdown', key: 'Documento', position: 2, start: false, row: { class: 'normal', align: 'left', width: 10, type: null } },
+                { key: 'Numero', position: 3, start: false, row: { class: 'normal', align: 'left', width: 5, type: null } },
+                { tipoControl: 'DateTimeInput', key: 'Fecha', position: 4, start: false, row: { class: 'normal', align: 'center', width: 15, type: null } },
+                { tipoControl: 'DateTimeInput', key: 'FechaInicio', position: 5, start: false, row: { class: 'normal', align: 'center', width: 15, type: null } },
+                { key: 'Debe', position: 6, start: false, row: { class: 'normal', align: 'right', width: 10, type: null } },
+                { key: 'Haber', position: 7, start: false, row: { class: 'normal', align: 'right', width: 10, type: null } },
+                { key: 'Saldo', position: 8, start: false, row: { class: 'normal', align: 'right', width: 10, type: null } }
             ],
-            default: { Id: 0, Remove: null, Cliente: 'Cliente', Documento: 'Tipo', Numero: 0, Fecha: 'Fecha de vencimiento', Debe: '$ Debe', Haber: '$ Haber', Saldo: '$ Saldo' }
+            default: { Id: 0, Remove: null, Cliente: 'Cliente', Documento: 'Tipo Documento', Numero: 0, Fecha: 'Fecha de vencimiento', FechaInicio: 'Fecha Inicio', Debe: '$ Debe', Haber: '$ Haber', Saldo: '$ Saldo' }
         },
         ban: {
             columns: [
-                { key:'Remove', position:0, start: false, row:{ class:'borrar', align:null, width:null, type:null } },
-                { tipoControl:'Autocomplete',key:'Cliente', position:1, start: true, row:{ class:'num-del normal', align:'left', width:100, type:null } },
-                { key:'Documento', position:2, start: false, row:{ class:'normal', align:'left', width:20, type:null } },
-                { key:'Numero', position:3, start: false, row:{ class:'normal', align:'left', width:10, type:null } },
-                { tipoControl:'DateTimeInput',key:'Fecha', position:4, start: false, row:{ class:'normal', align:'center', width:15, type:null } },
-                { key:'Debe', position:5, start: false, row:{ class:'normal', align:'right', width:10, type:null } },
-                { key:'Haber', position:6, start: false, row:{ class:'normal', align:'right', width:10, type:null } }
+                { key: 'Remove', position: 0, start: false, row: { class: 'borrar', align: null, width: null, type: null } },
+                { tipoControl: 'Autocomplete', key: 'Cliente', position: 1, start: true, row: { class: 'num-del normal', align: 'left', width: 100, type: null } },
+                { tipoControl: 'Dropdown', key: 'Documento', position: 2, start: false, row: { class: 'normal', align: 'left', width: 20, type: null } },
+                { key: 'Numero', position: 3, start: false, row: { class: 'normal', align: 'left', width: 5, type: null } },
+                { tipoControl: 'DateTimeInput', key: 'Fecha', position: 4, start: false, row: { class: 'normal', align: 'center', width: 15, type: null } },
+                { key: 'Debe', position: 5, start: false, row: { class: 'normal', align: 'right', width: 10, type: null } },
+                { key: 'Haber', position: 6, start: false, row: { class: 'normal', align: 'right', width: 10, type: null } }
             ],
-            default: { Id: 0, Remove: null, Cliente: 'Cliente', Documento: 'Tipo', Numero: 0, Fecha: 'Fecha de vencimiento', Debe: '$ Debe', Haber: '$ Haber' }
+            default: { Id: 0, Remove: null, Cliente: 'Cliente', Documento: 'Tipo Documento', Numero: 0, Fecha: 'Fecha de vencimiento', Debe: '$ Debe', Haber: '$ Haber' }
         }
     }
 }

@@ -13,7 +13,7 @@ class Celda extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { flagControl: true, valor: '', clientes: [], centrocosto: [] }
+        this.state = { flagControl: true, valor: '', clientes: [], centrocosto: [], tipoDocumento: [] }
         this.expanded.bind(this)
         this.cargaControl = this.cargaControl.bind(this)
         this.renderCelda = this.renderCelda.bind(this)
@@ -28,7 +28,12 @@ class Celda extends React.Component {
 
         this.setState(() => {
             return {
-                clientes: new Array('Constructora Cali', 'Albania SA', 'Algeria SPA', 'Baldor'),
+                clientes: [
+                    '20.671.784-k Constructora Cali',
+                    '24.612.605-4 Albania SA',
+                    '7.301.358-5 Algeria SPA',
+                    '24.138.968-5 Baldor'
+                ],
                 centrocosto: [
                     'Centro de costo 1',
                     'Centro de costo 2',
@@ -38,6 +43,11 @@ class Celda extends React.Component {
                     'Cali',
                     'Medellin',
                     'Bogota'
+                ],
+                tipoDocumento: [
+                    'Factura',
+                    'Nota de debito',
+                    'Nota de crédito'
                 ]
             };
         });
@@ -79,7 +89,6 @@ class Celda extends React.Component {
         });
     }
 
-
     cargaControl(event) {
         if (!$(event.currentTarget).parent().parent().hasClass('placeholder')) {
             this.setState(() => {
@@ -91,6 +100,7 @@ class Celda extends React.Component {
 
                             this.changeControlVal(event.target.value)
                         );
+
                     }
 
                     if (this.props.tipoControl == "Autocomplete") {
@@ -99,7 +109,6 @@ class Celda extends React.Component {
                             this.changeControlVal(event.target.value)
                         );
                     }
-
 
                     if (this.props.tipoControl == "Dropdown") {
                         this.refs.controlJqxWidget.on('select', (event) => {
@@ -119,9 +128,17 @@ class Celda extends React.Component {
 
                         this.refs.controlJqxWidget.on('change', (event) => {
                             var date = this.refs.controlJqxWidget.val();
-                            console.log(date)
+
                             this.changeControlVal(date)
                         });
+
+                    }
+
+
+                    if (this.props.tipoControl === undefined) {
+                        this.refs.controlJqxWidget.on('change', (event) =>
+                            this.changeControlVal(event.target.value)
+                        );
 
                     }
                 }
@@ -145,7 +162,7 @@ class Celda extends React.Component {
             )
         }
 
-        if (this.props.llave === 'Glosa') {
+        /*if (this.props.llave === 'Glosa') {
 
             if (this.state.flagControl) {
                 return (
@@ -158,7 +175,7 @@ class Celda extends React.Component {
                     </li>
                 )
             }
-        }
+        }*/
 
         if (this.props.llave === 'Cliente') {
 
@@ -175,7 +192,41 @@ class Celda extends React.Component {
             }
         }
 
+        if (this.props.llave === 'Documento') {
+
+            if (this.state.flagControl) {
+                return (
+                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
+                )
+            } else {
+                return (
+                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
+                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.tipoDocumento} placeHolder={"Seleccione:"} theme={'nubox'} />
+                    </li>
+                )
+            }
+        }
+
         if (this.props.llave === 'Fecha') {
+
+            if (this.state.flagControl) {
+                return (
+                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
+                    //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
+                )
+            } else {
+                return (
+                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
+                        <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
+                            width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
+                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}
+                        />
+                    </li>
+                )
+            }
+        }
+
+        if (this.props.llave === 'FechaInicio') {
 
             if (this.state.flagControl) {
                 return (
@@ -224,9 +275,21 @@ class Celda extends React.Component {
             }
         }
 
-        return (
-            <li className={this.props.style} tabIndex=''>{this.props.value}</li>
-        )
+        //return (
+        //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
+
+        if (this.state.flagControl) {
+            return (
+                <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
+            )
+        } else {
+            return (
+                <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
+                    <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' theme={'nubox'} />
+                </li>
+            )
+        }
+        //)
     }
 
     render() {

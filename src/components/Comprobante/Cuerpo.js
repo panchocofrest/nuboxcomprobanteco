@@ -39,7 +39,6 @@ class Cuerpo extends React.Component {
                     {
                         this.props.data.items.map((item, i) => {
                             i++
-                            debugger
                             let movimiento = this.props.source.movimientos[item.Tipo]
                             let movimiento_columns = (movimiento === undefined) ? null : movimiento.columns
                             let movimiento_default = (movimiento === undefined) ? null : movimiento.default

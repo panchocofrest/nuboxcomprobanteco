@@ -7,57 +7,60 @@ import Movimiento from './Movimiento';
 
 class Asiento extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props)
-        this.state = { style: this.props.style } 
-        this.enableRow = this.enableRow.bind(this)
-        this.addMovDefault = this.addMovDefault.bind(this)
-        this.validarCss = this.validarCss.bind(this)
+        this.state = { style: this.props.style }
+        this.habilitarFilaItem = this.habilitarFilaItem.bind(this)
+        this.habilitarNuevoMovimiento = this.habilitarNuevoMovimiento.bind(this)
+        this.actualizarCssMovimientos = this.actualizarCssMovimientos.bind(this)
     }
 
-      componentWillMount(){   
-        console.log(this.props)
+    componentDidUpdate() {
+        this.actualizarCssMovimientos(this.props.identificador)
     }
-    
-    enableRow(event) {
+
+    habilitarFilaItem(event) {
         if (!$(event.currentTarget).hasClass('placeholder'))
             return false
-            
-        this.setState(() => {
-            return {
-                 style: 'registro level-1'
-            }
-        });        
-        this.props.addItemDefault(this.props.item, this.props.index)
+
+        this.props.agregarNuevoItem(this.props.item)
     }
 
-    addMovDefault(nuevoMov) {
+    habilitarNuevoMovimiento(nuevoMov) {
         var item = JSON.parse(JSON.stringify({}));
         $.extend(item, nuevoMov)
-        this.props.addNuevoMov(item, this.props.item.Id)
+        this.props.agregarNuevoMovimiento(item, this.props.item.Id)
     }
-    
-    validarCss(key) {
-        
+
+    actualizarCssMovimientos(key) {
         var Label = $('#' + key)
-        if (Label.hasClass('activo')){
-            $(Label).find('.level-2').each(function(index, value) {
-                if($(value).css('height')=='0px') {
-                    $(value).css({ 'height':'auto' });
+        if (Label.hasClass('activo')) {
+            $(Label).find('.level-2').each(function (index, value) {
+                if ($(value).css('height') == '0px') {
+                    $(value).css({ 'height': 'auto' });
                 }
             })
         }
     }
 
-    componentDidUpdate() {
-        this.validarCss(this.props.identificador)
+    mostrarFilaMovimientoPlaceholder() {
+        let id = String(Math.random()).split('.')[1]
+        if (!(this.props.movimientos_default === null) && !(this.props.movimientos_columns === null))
+            return (
+                <Movimiento
+                    key={id}
+                    movimiento={this.props.movimientos_default}
+                    columns={this.props.movimientos_columns}
+                    habilitarNuevoMovimiento={this.habilitarNuevoMovimiento}
+                    style='registro level-2 level-sin-num placeholder'
+                    identificador={this.props.identificador + id} />
+            )
     }
-    
+
     render() {
         var that = this;
         if (this.props.movimientos != null) {
-            return(
+            return (
                 <div className={this.state.style} id={this.props.identificador}>
                     <Fila
                         item={this.props.item}
@@ -65,9 +68,10 @@ class Asiento extends React.Component {
 
                     {
                         this.props.movimientos.items.map((movimiento, i) => {
-                            return(
+                            i++
+                            return (
                                 <Movimiento
-                                    key={i+1}
+                                    key={i}
                                     movimiento={movimiento}
                                     columns={this.props.movimientos_columns}
                                     style='registro level-2 level-sin-num'
@@ -75,22 +79,16 @@ class Asiento extends React.Component {
                             )
                         })
                     }
-                    
-                    <Movimiento
-                        key={0}
-                        movimiento={this.props.movimientos_default}
-                        columns={this.props.movimientos_columns}
-                        Tipo={this.props.item['Tipo']}
-                        addMovDefault={this.addMovDefault}
-                        style='registro level-2 level-sin-num placeholder'
-                        identificador={that.props.identificador + String(Math.random()).split('.')[1]} />
 
+                    {
+                        this.mostrarFilaMovimientoPlaceholder()
+                    }
                 </div>
             )
         }
         else {
-            return(
-                <div className={this.state.style} id={this.props.identificador} onDoubleClick={this.enableRow}>
+            return (
+                <div className={this.state.style} id={this.props.identificador} onDoubleClick={this.habilitarFilaItem}>
                     <Fila
                         item={this.props.item}
                         columns={this.props.item_columns} />

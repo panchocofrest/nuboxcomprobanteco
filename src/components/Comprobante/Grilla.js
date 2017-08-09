@@ -6,8 +6,7 @@ import Cuerpo from './Cuerpo';
 
 class Grilla extends React.Component {
 
-  constructor(props)
-  {
+  constructor(props) {
     super(props)
     this.state = {
       data: {
@@ -17,20 +16,19 @@ class Grilla extends React.Component {
     this.reloadData = this.reloadData.bind(this)
   }
 
-  componentWillMount(){
+  componentWillMount() {
     let api = this.props.url
     fetch(api)
       .then((response) => {
         return response.json()
       })
       .then((data) => {
-        this.setState({ data: data }, function() { /*console.log(data)*/ })
+        this.setState({ data: data }, function () { /*console.log(data)*/ })
       })
   }
 
   reloadData(data) {
-    
-    this.setState({ data: data }, function() { /*console.log(data)*/ })
+    this.setState({ data: data }, function () { /*console.log(data)*/ })
   }
 
   render() {

@@ -4,20 +4,19 @@ import React from 'react';
 
 class Cabecera extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props)
     }
 
     renderCell(column, i) {
-        if (column.header.visible === true){
+        if (column.header.visible === true) {
 
             let style = (column.header.class !== null) ? column.header.class : '';
             let width = (column.header.width !== null) ? 'width-' + column.header.width : '';
             let css = (column.start === true) ? width + '-' + style : style + ' ' + width;
             let classname = 'header-li ' + css;
 
-            return(
+            return (
                 <li key={i} className={classname.trim()}>{column.header.label}</li>
             )
         }
@@ -25,7 +24,7 @@ class Cabecera extends React.Component {
 
     render() {
         //debugger
-        return(
+        return (
             <div className="header-comprobante">
                 <ul className="header-ul">
                     {

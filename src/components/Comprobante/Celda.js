@@ -126,14 +126,13 @@ class Celda extends React.Component {
 
                     if (this.props.tipoControl == "DateTimeInput") {
 
-                        this.refs.controlJqxWidget.on('change', (event) => {
+                        this.refs.controlJqxWidget.on('close', (event) => {
                             var date = this.refs.controlJqxWidget.val();
 
                             this.changeControlVal(date)
                         });
 
                     }
-
 
                     if (this.props.tipoControl === undefined) {
                         this.refs.controlJqxWidget.on('change', (event) =>
@@ -148,6 +147,7 @@ class Celda extends React.Component {
     }
 
     renderCelda() {
+       
         if (this.props.llave === 'Remove') {
             return (
                 <li className={this.props.style}></li>
@@ -215,11 +215,12 @@ class Celda extends React.Component {
                     //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
                 )
             } else {
+                 let fecha = this.state.valor.split('-')
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
                         <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
                             width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
-                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}
+                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}  value={new Date(fecha[2], fecha[1] - 1, fecha[0])}
                         />
                     </li>
                 )
@@ -234,11 +235,12 @@ class Celda extends React.Component {
                     //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
                 )
             } else {
+                 let fecha = this.state.valor.split('-')
                 return (
                     <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
                         <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
                             width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
-                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}
+                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40} value={new Date(fecha[2], fecha[1] - 1, fecha[0])}
                         />
                     </li>
                 )

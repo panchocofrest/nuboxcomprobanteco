@@ -17,10 +17,18 @@ class ControlJqx extends React.Component {
    
 
     render() {
-        //debugger
-       if (this.props.tipoControl === "Autocomplete") {
+    
+
+
+      if (this.props.tipoControl === "Input") {
             return (
                <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' theme={'nubox'} />
+            )
+        } 
+
+       if (this.props.tipoControl === "Autocomplete") {
+            return (
+               <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' source={this.props.source} theme={'nubox'} />
             )
         }
          if (this.props.tipoControl === "Dropdown") {
@@ -29,9 +37,17 @@ class ControlJqx extends React.Component {
             )
         }
 
-         if (this.props.tipoControl === "Autocomplete") {
+         if (this.props.tipoControl === "DateTimeInput") {
+              let fecha = this.props.valor.split('-')
+                  let date = new Date()
+                  if(fecha.length > 1){
+                   date = new Date(fecha[2], fecha[1] - 1, fecha[0]);
+                  }
             return (
-               <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' theme={'nubox'} />
+               <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
+                           width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
+                          culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40} value={date}
+                           />
             )
         }
 

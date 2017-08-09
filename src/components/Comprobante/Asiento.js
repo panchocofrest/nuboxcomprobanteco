@@ -15,6 +15,10 @@ class Asiento extends React.Component {
         this.addMovDefault = this.addMovDefault.bind(this)
         this.validarCss = this.validarCss.bind(this)
     }
+
+      componentWillMount(){   
+        console.log(this.props)
+    }
     
     enableRow(event) {
         if (!$(event.currentTarget).hasClass('placeholder'))

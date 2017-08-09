@@ -26,6 +26,7 @@ import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownli
         this.inputChange = this.inputChange.bind(this)
         this.changeControlVal = this.changeControlVal.bind(this)
         
+        
     }
 
 
@@ -43,6 +44,11 @@ import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownli
             'Centro de costo 1',
             'Centro de costo 2',
             'Centro de costo 3'
+            ],
+          sucursales :  [
+            'Cali',
+            'Medellin',
+            'Bogota'
             ] };
         });
     }
@@ -96,17 +102,28 @@ import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownli
   
      this.setState(() => {
         
+ console.log(this.state.flagControl)
+  console.log(this.props)
+
        if(!this.state.flagControl)
         {
            
-            this.refs.controlJqxWidget.on('change', (event) =>
-            {
-            if(this.props.llave != "CentroCostos"){
-                    this.changeControlVal(event.target.value)
-               }
-            });
+           if(this.props.tipoControl == "Input"){
+                this.refs.controlJqxWidget.on('change', (event) =>
 
-            if(this.props.llave == "CentroCostos"){
+                 this.changeControlVal(event.target.value)
+                );
+           }
+
+            if( this.props.tipoControl == "Autocomplete"){
+                this.refs.controlJqxWidget.on('change', (event) =>
+
+                 this.changeControlVal(event.target.value)
+                );
+           }
+
+
+            if(this.props.tipoControl == "Dropdown"){
                 this.refs.controlJqxWidget.on('select', (event) => {
                     let args = event.args;
                     let item = this.refs.controlJqxWidget.getItem(args.index);
@@ -119,8 +136,8 @@ import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownli
                 });
             }
 
-               if(this.props.llave == "Fecha"){
-
+               if(this.props.tipoControl == "Calendar"){
+               
                    this.refs.controlJqxWidget.on('click', (event) =>
                     {
                        
@@ -213,6 +230,21 @@ import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownli
                   return(
                         <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
                           <JqxDropDownList ref='controlJqxWidget'  width={150} height={'28px'} source={this.state.centrocosto}  selectedIndex={1} theme={'nubox'}  />
+                        </li>
+                        )
+                }
+             }
+
+              if(this.props.llave === 'Sucursal') {
+
+                if(this.state.flagControl) {
+                    return(
+                        <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
+                        )
+                }else{
+                  return(
+                        <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
+                          <JqxDropDownList ref='controlJqxWidget'  width={150} height={'28px'} source={this.state.sucursales}  selectedIndex={1} theme={'nubox'}  />
                         </li>
                         )
                 }

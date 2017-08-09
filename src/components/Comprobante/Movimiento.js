@@ -41,6 +41,7 @@ class Movimiento extends React.Component {
             <Celda
                 key={i}
                 llave={column.key}
+                tipoControl={column.tipoControl}
                 style={classname.trim()}
                 value={this.props.movimiento[column.key]} />
         )

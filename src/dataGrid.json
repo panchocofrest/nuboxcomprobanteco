@@ -11,6 +11,7 @@
             "Sucursal":"centro-sur",
             "Debe":"$1.000.080",
             "Haber":"$1.000.080",
+            "TipoControl" : "Imput",
             "Movimientos": {
                 "items":[
                     {

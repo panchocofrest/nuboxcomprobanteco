@@ -10,6 +10,8 @@ class Fila extends React.Component {
         super(props)
     }
 
+   
+   
     renderCelda(column, i) {
         let style = (column.row.class !== null) ? column.row.class : ''
         let width = (column.row.width !== null) ? 'width-' + column.row.width : ''
@@ -22,6 +24,7 @@ class Fila extends React.Component {
             <Celda
                 key={i}
                 llave={column.key}
+                tipoControl={column.tipoControl}
                 style={classname.trim()}
                 value={this.props.item[column.key]} />
         )

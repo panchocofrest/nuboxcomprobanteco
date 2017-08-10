@@ -8,6 +8,7 @@ import JqxCalendar from '../../public/js/jqwidgets-react/react_jqxcalendar.js';
 import JqxPanel from '../../public/js/jqwidgets-react/react_jqxpanel.js';
 import JqxDropDownList from '../../public/js/jqwidgets-react/react_jqxdropdownlist.js';
 import JqxDateTimeInput from '../../public/js/jqwidgets-react/react_jqxdatetimeinput.js';
+import ControlJqx from './ControlJqx'
 
 class Celda extends React.Component {
 
@@ -93,13 +94,13 @@ class Celda extends React.Component {
 
      eventSet(event){
             console.log('eventSet')
-            console.log(this.refs.controlJqxWidget)
-
+            let controlTemp = this.refs.ControlJqx.refs.controlJqxWidget;
+            console.log (controlTemp)
            if (!this.state.flagControl) {
 
                     if (this.props.tipoControl == "Input") {
-                        this.refs.controlJqxWidget.focus()
-                        this.refs.controlJqxWidget.on('change', (event) =>
+                        controlTemp.focus()
+                        controlTemp.on('change', (event) =>
 
                             this.changeControlVal(event.target.value)
                         );
@@ -107,18 +108,18 @@ class Celda extends React.Component {
                     }
 
                     if (this.props.tipoControl == "Autocomplete") {
-                        this.refs.controlJqxWidget.focus()
-                        this.refs.controlJqxWidget.on('change', (event) =>
+                        controlTemp.focus()
+                        controlTemp.on('change', (event) =>
 
                             this.changeControlVal(event.target.value)
                         );
                     }
 
                     if (this.props.tipoControl == "Dropdown") {
-                        this.refs.controlJqxWidget.on('select', (event) => {
+                        controlTemp.on('select', (event) => {
 
                             let args = event.args;
-                            let item = this.refs.controlJqxWidget.getItem(args.index);
+                            let item = controlTemp.getItem(args.index);
 
                             if (item != null) {
                                 this.changeControlVal(item.label)
@@ -129,9 +130,9 @@ class Celda extends React.Component {
                     }
 
                     if (this.props.tipoControl == "DateTimeInput") {
-                        this.refs.controlJqxWidget.open()
-                        this.refs.controlJqxWidget.on('close', (event) => {
-                            var date = this.refs.controlJqxWidget.val();
+                        controlTemp.open()
+                        controlTemp.on('close', (event) => {
+                            var date = controlTemp.val();
 
                             this.changeControlVal(date)
                         });
@@ -139,8 +140,8 @@ class Celda extends React.Component {
                     }
 
                     if (this.props.tipoControl === undefined) {
-                        this.refs.controlJqxWidget.focus()
-                        this.refs.controlJqxWidget.on('change', (event) =>
+                        controlTemp.focus()
+                        controlTemp.on('change', (event) =>
                             this.changeControlVal(event.target.value)
                         );
 
@@ -187,114 +188,7 @@ class Celda extends React.Component {
                 <li className={css.trim()} onClick={this.expanded}></li>
             )
         }
-        if (this.props.llave === 'Cliente') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                )
-            } else {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxInput ref='controlJqxWidget' width={150} height={'28px'} source={this.state.clientes} theme={'nubox'} />
-                    </li>
-                )
-            }
-        }
-
-        if (this.props.llave === 'Documento') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                )
-            } else {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.tipoDocumento} placeHolder={"Seleccione:"} theme={'nubox'} />
-                    </li>
-                )
-            }
-        }
-
-        if (this.props.llave === 'Fecha') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                    //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
-                )
-            } else {
-                 let fecha = this.state.valor.split('-')
-                 let date = new Date()
-                 if(fecha.length > 1){
-                  date = new Date(fecha[2], fecha[1] - 1, fecha[0])
-                 }
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
-                            width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
-                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40}  value={date}
-
-                        />
-                    </li>
-                )
-            }
-        }
-
-        if (this.props.llave === 'FechaInicio') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                    //<li className={this.props.style} tabIndex=''>{this.props.value}</li>
-                )
-            } else {
-                 let fecha = this.state.valor.split('-')
-                 let date = new Date()
-                 if(fecha.length > 1){
-                  date = new Date(fecha[2], fecha[1] - 1, fecha[0])
-                 }
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDateTimeInput ref='controlJqxWidget' style={{ marginTop: 3 }}
-                            width={140} height={30} theme={'nubox'} placeHolder={"Seleccione:"}
-                            culture={'es-CL'} animationType={'fade'} formatString={'d'} titleHeight={40} value={date}
-                        />
-                    </li>
-                )
-            }
-        }
-
-        if (this.props.llave === 'CentroCostos') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                )
-            } else {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.centrocosto} placeHolder={"Seleccione:"} theme={'nubox'} />
-                    </li>
-                )
-            }
-        }
-
-        if (this.props.llave === 'Sucursal') {
-
-            if (this.state.flagControl) {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>{this.state.valor}</li>
-                )
-            } else {
-                return (
-                    <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                        <JqxDropDownList ref='controlJqxWidget' width={150} height={'28px'} source={this.state.sucursales} placeHolder={"Seleccione:"} theme={'nubox'} />
-                    </li>
-                )
-            }
-        }
+      
     
         if (this.state.flagControl) {
             return (
@@ -303,7 +197,7 @@ class Celda extends React.Component {
         } else {
             return (
                 <li className={this.props.style} tabIndex='' onClick={this.cargaControl.bind(this)}>
-                    <JqxInput ref='controlJqxWidget' width={150} height={'28px'} value='' theme={'nubox'} />
+                   <ControlJqx ref='ControlJqx' tipoControl={this.props.tipoControl} valor={this.state.valor} source={this.state[this.props.source]}/>
                 </li>
             )
         }

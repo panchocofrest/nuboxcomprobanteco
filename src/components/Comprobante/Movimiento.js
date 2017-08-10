@@ -30,6 +30,7 @@ class Movimiento extends React.Component {
                 key={i}
                 llave={column.key}
                 tipoControl={column.tipoControl}
+                source = {column.source}
                 style={classname.trim()}
                 value={this.props.movimiento[column.key]} />
         )

@@ -22,6 +22,7 @@ class Fila extends React.Component {
                 key={i}
                 llave={column.key}
                 tipoControl={column.tipoControl}
+                source = {column.source}
                 style={classname.trim()}
                 value={this.props.item[column.key]} />
         )

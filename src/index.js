@@ -7,7 +7,7 @@ var source = {
     columns: [
         { key: 'Num', position: 0, start: false, header: { visible: true, label: null, class: 'numeracion', width: null }, row: { class: 'numeracion', align: null, width: null, type: null } },
         { key: 'Remove', position: 1, start: false, header: { visible: false, label: null, class: null, width: null }, row: { class: null, align: null, width: null, type: null } },
-        { key: 'Cuenta', position: 2, start: true, header: { visible: true, label: 'Cuenta', class: 'num-label-del', width: 100 }, row: { class: 'num-label-del normal no-border', align: 'left', width: 100, type: 'String' } },
+        { key: 'Cuenta', tipoControl: 'Autocomplete', position: 2, start: true, header: { visible: true, label: 'Cuenta', class: 'num-label-del', width: 100 }, row: { class: 'num-label-del normal no-border', align: 'left', width: 100, type: 'String' }, source:'clientes' },
         { key: 'Tipo', position: 3, start: false, header: { visible: false, label: null, class: null, width: null }, row: { class: 'label collapsed', align: null, width: null, type: null } },
         { key: 'Glosa', tipoControl: 'Input', position: 4, start: false, header: { visible: true, label: 'Glosa', class: null, width: 15 }, row: { class: 'normal', align: 'left', width: 15, type: 'String' } },
         { key: 'CentroCostos', tipoControl: 'Dropdown', position: 5, start: false, header: { visible: true, label: 'Centro de Costos', class: null, width: 20 }, row: { class: 'normal', align: 'left', width: 20, type: 'String' }, source:'centrocosto' },
